@@ -1,52 +1,1115 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const galeria = [
-  { src: '/images/playa-general.jpg', alt: 'Vista panoramica de la Playa de las Catedrales con arcos monumentales', titulo: 'Vista Panoramica' },
-  { src: '/images/arcos01.jpg', alt: 'Arcos naturales de piedra pizarra', titulo: 'Los Arcos' },
-  { src: '/images/arena01.jpg', alt: 'Arena dorada entre formaciones rocosas', titulo: 'La Arena' },
-  { src: '/images/atardecer.jpg', alt: 'Atardecer en la playa con luz dorada', titulo: 'Atardecer' },
-  { src: '/images/marea-baja.jpg', alt: 'Formaciones rocosas reveladas en marea baja', titulo: 'Marea Baja' },
-  { src: '/images/paisaje.jpg', alt: 'Paisaje de la costa lucense', titulo: 'El Paisaje' }
+const categorias = [
+  { id: 'todas', label: 'Todas' },
+  { id: 'arcos', label: 'Arcos' },
+  { id: 'paisajes', label: 'Paisajes' },
+  { id: 'atardecer', label: 'Atardecer' },
+  { id: 'mareas', label: 'Mareas' },
+  { id: 'detalles', label: 'Detalles' }
+];
+
+const imagenes = [
+  { 
+    src: '/images/galeria-paisaje-01.jpg', 
+    alt: 'Vista panoramica de la Playa de las Catedrales con arcos monumentales', 
+    categoria: 'paisajes',
+    titulo: 'Panoramica Monumental',
+    descripcion: 'La playa en toda su extension, mostrando los imponentes arcos de piedra'
+  },
+  { 
+    src: '/images/galeria-arcos-01.jpg', 
+    alt: 'Arcos naturales de piedra pizarra tallados por el mar durante millones de anos', 
+    categoria: 'arcos',
+    titulo: 'Los Arcos Centrales',
+    descripcion: 'Las formaciones rocosas mas emblematicas de la costa gallega'
+  },
+  { 
+    src: '/images/galeria-atardecer-01.jpg', 
+    alt: 'Atardecer dorado sobre los acantilados de la Playa de las Catedrales', 
+    categoria: 'atardecer',
+    titulo: 'Atardecer de Fuego',
+    descripcion: 'El sol se oculta pintando el cielo de tonos anaranjados'
+  },
+  { 
+    src: '/images/catedrais-vista-aerea.jpg', 
+    alt: 'Vista aerea de la Playa de las Catedrales mostrando la costa en zigzag', 
+    categoria: 'paisajes',
+    titulo: 'Perspectiva Aerea',
+    descripcion: 'Una vision unica desde el cielo de este monumento natural'
+  },
+  { 
+    src: '/images/galeria-mareas-01.jpg', 
+    alt: 'Formaciones rocosas reveladas durante la marea baja con pozas de agua cristalina', 
+    categoria: 'mareas',
+    titulo: 'Secretos de la Marea',
+    descripcion: 'Las mareas revelan un mundo oculto de pozas y cuevas'
+  },
+  { 
+    src: '/images/arcos01.jpg', 
+    alt: 'Detalle de los arcos naturales con textura de pizarra y musgo', 
+    categoria: 'arcos',
+    titulo: 'Textura del Tiempo',
+    descripcion: 'Cada arco cuenta una historia de 500 millones de anos'
+  },
+  { 
+    src: '/images/playa-general.jpg', 
+    alt: 'Vista general de la playa con su arena dorada y formaciones rocosas', 
+    categoria: 'paisajes',
+    titulo: 'Arena y Roca',
+    descripcion: 'El contraste entre la suave arena y la roca milenaria'
+  },
+  { 
+    src: '/images/tarjeta-atardecer.jpg', 
+    alt: 'Siluetas de los arcos contra un cielo anaranjado al atardecer', 
+    categoria: 'atardecer',
+    titulo: 'Siluetas al Ocaso',
+    descripcion: 'Los arcos se dibujan contra el cielo crepuscular'
+  },
+  { 
+    src: '/images/galeria-detalles-01.jpg', 
+    alt: 'Percebes en las rocas de la Playa de las Catedrales', 
+    categoria: 'detalles',
+    titulo: 'Percebes del Cantabrico',
+    descripcion: 'Los frutos del mar que crecen en las rocas de la costa'
+  },
+  { 
+    src: '/images/paisaje.jpg', 
+    alt: 'Paisaje costero de la costa lucense con acantilados y mar Cantabrico', 
+    categoria: 'paisajes',
+    titulo: 'Costa Lucense',
+    descripcion: 'La belleza natural de la costa de Lugo en toda su extension'
+  },
+  { 
+    src: '/images/tarjeta-catedrales.jpg', 
+    alt: 'Arcos monumentales vistos desde el interior de la playa', 
+    categoria: 'arcos',
+    titulo: 'Catedral Natural',
+    descripcion: 'La perspectiva desde el interior revela la verdadera escala'
+  },
+  { 
+    src: '/images/tarjeta-arena.jpg', 
+    alt: 'Detalle de la arena y pequenas conchas en la orilla', 
+    categoria: 'detalles',
+    titulo: 'Tesoros de la Orilla',
+    descripcion: 'Pequenos detalles que hacen magica esta playa'
+  },
+  { 
+    src: '/images/playacatedrales.jpg', 
+    alt: 'Vista amplia de la Playa de las Catedrales con visitantes caminando', 
+    categoria: 'paisajes',
+    titulo: 'Escala Humana',
+    descripcion: 'Los visitantes dan perspectiva del tamano de los arcos'
+  },
+  { 
+    src: '/images/upscalemedia-transformed.jpeg', 
+    alt: 'Detalle artistico de las formaciones rocosas con reflejos del agua', 
+    categoria: 'detalles',
+    titulo: 'Reflejos del Atlantico',
+    descripcion: 'El mar y la roca se funden en una danza visual'
+  },
+  { 
+    src: '/images/playa-catedrales-lugo-s1199252332.avif', 
+    alt: 'Fotografia profesional de la playa con luz natural del amanecer', 
+    categoria: 'paisajes',
+    titulo: 'Luz del Amanecer',
+    descripcion: 'La luz matutina transforma los colores de la pizarra'
+  }
 ];
 ---
 
-<Layout title="Galería" description="Galeria de imagenes de la Playa de las Catedrales">
-  <div class="container">
-    <h1>Galeria de Imagenes</h1>
-    <p>Coleccion de imagenes que muestran la belleza natural de la Praia das Catedrais.</p>
-    
-    <div class="galeria" role="list" aria-label="Galeria de imagenes de la Playa de las Catedrales">
-      {galeria.map((img, index) => (
-        <figure role="listitem">
-          <img src={img.src} alt={img.alt} loading="lazy" width="400" height="300">
-          <figcaption>{img.titulo}</figcaption>
-        </figure>
-      ))}
+<Layout
+  title="Galeria"
+  description="Galeria de imagenes de la Playa de las Catedrales. Descubre los arcos monumentales, paisajes costeros y atardeceres de este monumento natural de Galicia."
+  variant="home"
+>
+  <section class="hero-parallax" aria-labelledby="hero-title">
+    <div class="hero-parallax-bg" aria-hidden="true"></div>
+    <div class="hero-parallax-overlay"></div>
+    <div class="hero-parallax-content">
+      <span class="hero-eyebrow">PRAIA DAS CATEDRAIS</span>
+      <h1 id="hero-title" class="hero-title">
+        Galeria de<br />Imagenes
+      </h1>
+      <p class="hero-subtitle">
+        Un viaje visual por los arcos monumentales, paisajes costeros 
+        y momentos magicos del Atlantico gallego.
+      </p>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 5v14m0 0l-6-6m6 6l6-6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </div>
     </div>
+  </section>
 
-    <section class="video" aria-labelledby="video-title">
-      <h2 id="video-title">Video Promocional</h2>
-      <video controls preload="none" aria-label="Video promocional de la Playa de las Catedrales">
-        <source src="/videos/promocional.mp4" type="video/mp4">
-        <track kind="subtitles" src="/videos/subtitulos.vtt" srclang="es" label="Espanol" default>
-        Tu navegador no soporta reproduccion de video.
-      </video>
-    </section>
+  <section class="filters-section" aria-label="Filtros de categoria">
+    <div class="container">
+      <div class="filters-wrapper reveal">
+        <p class="filters-label">Filtrar por categoria</p>
+        <div class="filters" role="tablist" aria-label="Categorias de imagenes">
+          {categorias.map((cat, index) => (
+            <button
+              class={`filter-btn ${index === 0 ? 'filter-active' : ''}`}
+              data-filter={cat.id}
+              role="tab"
+              aria-selected={index === 0 ? 'true' : 'false'}
+              aria-controls={`panel-${cat.id}`}
+              tabindex={index === 0 ? '0' : '-1'}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" aria-label="Galeria de imagenes">
+    <div class="container">
+      <div class="gallery-grid" role="list" aria-label="Imagenes de la Playa de las Catedrales">
+        {imagenes.map((img, index) => (
+          <figure 
+            class={`gallery-item reveal ${img.categoria}`} 
+            role="listitem"
+            data-category={img.categoria}
+            data-index={index}
+            tabindex="0"
+            aria-label={`Ver imagen: ${img.titulo}. ${img.descripcion}`}
+          >
+            <div class="gallery-image-wrapper">
+              <img 
+                src={img.src} 
+                alt={img.alt}
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-content">
+                  <svg class="gallery-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="gallery-view-text">Ver imagen</span>
+                </div>
+              </div>
+            </div>
+            <figcaption class="gallery-caption">
+              <span class="gallery-caption-title">{img.titulo}</span>
+              <span class="gallery-caption-desc">{img.descripcion}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div 
+    id="lightbox" 
+    class="lightbox" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-label="Visor de imagenes"
+    tabindex="-1"
+    hidden
+  >
+    <button class="lightbox-close" aria-label="Cerrar visor" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    
+    <button class="lightbox-nav lightbox-prev" aria-label="Imagen anterior" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <button class="lightbox-nav lightbox-next" aria-label="Imagen siguiente" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+        <span class="lightbox-counter" aria-live="polite">
+          <span id="lightbox-current">1</span> / <span id="lightbox-total">15</span>
+        </span>
+      </div>
+    </div>
   </div>
+
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2 id="cta-title" class="cta-title">
+          ¿Quieres verlo en persona?
+        </h2>
+        <p class="cta-text">
+          La Playa de las Catedrales te espera. Planifica tu visita y descubre 
+          por que es uno de los paisajes mas espectaculares de Europa.
+        </p>
+        <a href="/visitar" class="cta-button">
+          Planificar Visita
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
 
-<style>
-  .container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
-  .galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+<script>
+  // Gallery filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      
+      // Update active state
+      filterBtns.forEach(b => {
+        b.classList.remove('filter-active');
+        b.setAttribute('aria-selected', 'false');
+        b.setAttribute('tabindex', '-1');
+      });
+      btn.classList.add('filter-active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('tabindex', '0');
+
+      // Filter items with animation
+      galleryItems.forEach(item => {
+        if (filter === 'todas' || item.dataset.category === filter) {
+          item.classList.remove('gallery-hidden');
+          item.style.display = '';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.9)';
+          setTimeout(() => {
+            item.classList.add('gallery-hidden');
+            item.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+
+    // Keyboard navigation for tabs
+    btn.addEventListener('keydown', (e) => {
+      const tabs = Array.from(filterBtns);
+      const index = tabs.indexOf(btn);
+      
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const next = tabs[(index + 1) % tabs.length];
+        next.focus();
+        next.click();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const prev = tabs[(index - 1 + tabs.length) % tabs.length];
+        prev.focus();
+        prev.click();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        tabs[0].focus();
+        tabs[0].click();
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        tabs[tabs.length - 1].focus();
+        tabs[tabs.length - 1].click();
+      }
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxDesc = document.getElementById('lightbox-desc');
+  const lightboxCurrent = document.getElementById('lightbox-current');
+  const lightboxTotal = document.getElementById('lightbox-total');
+  const closeBtn = document.querySelector('.lightbox-close');
+  const prevBtn = document.querySelector('.lightbox-prev');
+  const nextBtn = document.querySelector('.lightbox-next');
+
+  let currentIndex = 0;
+  let visibleItems = Array.from(galleryItems);
+
+  function updateVisibleItems() {
+    visibleItems = Array.from(galleryItems).filter(item => 
+      !item.classList.contains('gallery-hidden') && item.style.display !== 'none'
+    );
   }
-  figure { margin: 0; }
-  img { width: 100%; height: auto; border-radius: 8px; }
-  figcaption { margin-top: 0.5rem; font-size: 0.9rem; color: #666; }
-  .video { margin-top: 3rem; }
-  video { width: 100%; max-width: 800px; border-radius: 8px; }
+
+  function openLightbox(index) {
+    updateVisibleItems();
+    currentIndex = index;
+    const item = visibleItems[currentIndex];
+    const img = item.querySelector('img');
+    const title = item.querySelector('.gallery-caption-title').textContent;
+    const desc = item.querySelector('.gallery-caption-desc').textContent;
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxTitle.textContent = title;
+    lightboxDesc.textContent = desc;
+    lightboxCurrent.textContent = currentIndex + 1;
+    lightboxTotal.textContent = visibleItems.length;
+
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    
+    // Focus management
+    setTimeout(() => closeBtn.focus(), 100);
+    
+    // Trap focus
+    trapFocus(lightbox);
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    
+    // Return focus to the item that opened the lightbox
+    if (visibleItems[currentIndex]) {
+      visibleItems[currentIndex].focus();
+    }
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+    updateLightboxContent();
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % visibleItems.length;
+    updateLightboxContent();
+  }
+
+  function updateLightboxContent() {
+    const item = visibleItems[currentIndex];
+    const img = item.querySelector('img');
+    const title = item.querySelector('.gallery-caption-title').textContent;
+    const desc = item.querySelector('.gallery-caption-desc').textContent;
+
+    // Add fade transition
+    lightboxImg.style.opacity = '0';
+    
+    setTimeout(() => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxTitle.textContent = title;
+      lightboxDesc.textContent = desc;
+      lightboxCurrent.textContent = currentIndex + 1;
+      lightboxImg.style.opacity = '1';
+    }, 200);
+  }
+
+  // Focus trap for accessibility
+  function trapFocus(element) {
+    const focusableElements = element.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    element.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusable) {
+            e.preventDefault();
+            lastFocusable.focus();
+          }
+        } else {
+          if (document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable.focus();
+          }
+        }
+      }
+    });
+  }
+
+  // Event listeners
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      updateVisibleItems();
+      const visibleIndex = visibleItems.indexOf(item);
+      openLightbox(visibleIndex >= 0 ? visibleIndex : index);
+    });
+
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        updateVisibleItems();
+        const visibleIndex = visibleItems.indexOf(item);
+        openLightbox(visibleIndex >= 0 ? visibleIndex : index);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+
+  // Keyboard navigation
+  lightbox.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    }
+  });
+
+  // Close on backdrop click
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Scroll reveal animations
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // Touch/swipe support for lightbox
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        showNext();
+      } else {
+        showPrev();
+      }
+    }
+  }
+</script>
+
+<style>
+  /* Hero Parallax */
+  .hero-parallax {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: -80px;
+    padding-top: 80px;
+    background-color: #001e2b;
+  }
+
+  .hero-parallax-bg {
+    position: absolute;
+    inset: -20%;
+    background-image: url(/images/atardecer.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: #001e2b;
+    z-index: 0;
+  }
+
+  .hero-parallax-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,30,43,0.5) 0%, rgba(0,71,94,0.3) 50%, rgba(0,30,43,0.7) 100%);
+    z-index: 1;
+  }
+
+  .hero-parallax-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #57c5b6;
+    background: rgba(87, 197, 182, 0.1);
+    border: 1px solid rgba(87, 197, 182, 0.3);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+    animation: heroReveal 1s ease-out;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 1.5rem;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    animation: heroReveal 1s ease-out 0.2s both;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    max-width: 600px;
+    margin: 0 auto;
+    animation: heroReveal 1s ease-out 0.4s both;
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.6);
+    animation: scrollBounce 2.5s ease-in-out infinite;
+  }
+
+  @keyframes heroReveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+    50% { transform: translateX(-50%) translateY(10px); opacity: 1; }
+  }
+
+  /* Container */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Filters */
+  .filters-section {
+    padding: 3rem 1.5rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .filters-wrapper {
+    text-align: center;
+  }
+
+  .filters-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #57c5b6;
+    margin-bottom: 1rem;
+  }
+
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #dee2e6;
+    background: #fff;
+    color: #495057;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+
+  .filter-btn:hover {
+    border-color: #57c5b6;
+    color: #00475e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,71,94,0.15);
+  }
+
+  .filter-btn:focus-visible {
+    outline: 3px solid #57c5b6;
+    outline-offset: 2px;
+  }
+
+  .filter-active {
+    background: #00475e;
+    color: #fff;
+    border-color: #00475e;
+  }
+
+  .filter-active:hover {
+    background: #1a5f7a;
+    color: #fff;
+    border-color: #1a5f7a;
+  }
+
+  /* Gallery Grid */
+  .gallery-section {
+    padding: 4rem 1.5rem;
+    background: #fff;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .gallery-item {
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .gallery-item:focus-visible {
+    outline: 3px solid #57c5b6;
+    outline-offset: 4px;
+    border-radius: 16px;
+  }
+
+  .gallery-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: #001e2b;
+  }
+
+  .gallery-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover .gallery-image-wrapper img,
+  .gallery-item:focus .gallery-image-wrapper img {
+    transform: scale(1.08);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 30, 43, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+
+  .gallery-item:hover .gallery-overlay,
+  .gallery-item:focus .gallery-overlay {
+    background: rgba(0, 30, 43, 0.6);
+  }
+
+  .gallery-overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+
+  .gallery-item:hover .gallery-overlay-content,
+  .gallery-item:focus .gallery-overlay-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gallery-icon {
+    stroke: currentColor;
+  }
+
+  .gallery-view-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .gallery-caption {
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .gallery-caption-title {
+    display: block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #00475e;
+    margin-bottom: 0.25rem;
+  }
+
+  .gallery-caption-desc {
+    display: block;
+    font-size: 0.875rem;
+    color: #6c757d;
+    line-height: 1.5;
+  }
+
+  .gallery-hidden {
+    display: none !important;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 30, 43, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .lightbox[hidden] {
+    display: none;
+  }
+
+  .lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: opacity 0.2s ease;
+  }
+
+  .lightbox-info {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #fff;
+  }
+
+  .lightbox-info h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+
+  .lightbox-info p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    margin: 0 0 1rem;
+    max-width: 600px;
+  }
+
+  .lightbox-counter {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #57c5b6;
+    background: rgba(87, 197, 182, 0.1);
+    padding: 0.375rem 1rem;
+    border-radius: 999px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+
+  .lightbox-close:hover,
+  .lightbox-close:focus-visible {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+
+  .lightbox-nav:hover,
+  .lightbox-nav:focus-visible {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .lightbox-prev {
+    left: 1.5rem;
+  }
+
+  .lightbox-next {
+    right: 1.5rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 6rem 1.5rem;
+    background: #00475e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(87, 197, 182, 0.1) 0%, transparent 50%);
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 1.5rem;
+    line-height: 1.2;
+  }
+
+  .cta-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 2.5rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: #57c5b6;
+    color: #001e2b;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    border: 2px solid #57c5b6;
+  }
+
+  .cta-button:hover,
+  .cta-button:focus-visible {
+    background: transparent;
+    color: #57c5b6;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .cta-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+
+  /* Scroll Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-parallax {
+      margin-top: -60px;
+      min-height: 500px;
+    }
+
+    .hero-parallax-bg {
+      background-attachment: scroll;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .filters {
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    .lightbox-nav {
+      width: 44px;
+      height: 44px;
+    }
+
+    .lightbox-prev {
+      left: 0.75rem;
+    }
+
+    .lightbox-next {
+      right: 0.75rem;
+    }
+
+    .lightbox-info h3 {
+      font-size: 1.25rem;
+    }
+
+    .cta-section {
+      padding: 4rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-parallax-content {
+      padding: 0 1rem;
+    }
+
+    .gallery-section {
+      padding: 2rem 1rem;
+    }
+
+    .gallery-grid {
+      gap: 1rem;
+    }
+
+    .gallery-caption-title {
+      font-size: 1rem;
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-title,
+    .hero-subtitle,
+    .hero-eyebrow {
+      animation: none;
+    }
+
+    .hero-scroll-hint {
+      animation: none;
+    }
+
+    .hero-parallax-bg {
+      background-attachment: scroll;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .gallery-item:hover .gallery-image-wrapper img,
+    .gallery-item:focus .gallery-image-wrapper img {
+      transform: none;
+    }
+
+    .filter-btn {
+      transition: none;
+    }
+
+    .lightbox-content img {
+      transition: none;
+    }
+  }
 </style>
