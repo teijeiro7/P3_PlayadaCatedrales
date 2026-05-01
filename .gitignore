@@ -11,6 +11,9 @@ dist/
 .env
 .env.*
 
+# Config
+opencode.json
+
 #IDE
 .vscode/
 .idea/
