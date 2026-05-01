@@ -1,39 +1,42 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Playa de las Catedrales - Monumento Natural en Ribadeo, Lugo. Descubre esta obra de arte esculpida por el mar.">
-  <title>Playa de las Catedrales | Praia das Catedrais</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
-<body>
-  <a href="#main" class="skip-link">Saltar al contenido principal</a>
-  
-  <header role="banner">
-    <nav aria-label="Navegación principal">
-      <a href="/" aria-current="page">Inicio</a>
-      <a href="/historia">Historia</a>
-      <a href="/galeria">Galería</a>
-      <a href="/visitar">Cómo Visitar</a>
-      <a href="/postal">Postal</a>
-    </nav>
-  </header>
+---
+import Layout from '../layouts/Layout.astro';
+---
 
-  <main id="main" role="main" tabindex="-1">
-    <section aria-labelledby="hero-title">
+<Layout title="Inicio" description="Playa de las Catedrales - Monumento Natural en Ribadeo, Lugo. Descubre esta obra de arte esculpida por el mar.">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
       <h1 id="hero-title">Playa de las Catedrales</h1>
-      <p>La catedral del mar - Un monumento natural en Ribadeo, Lugo</p>
-      <a href="/galeria" aria-label="Ver galería de imágenes">Ver Galería</a>
-      <a href="/postal" aria-label="Enviar una postal">Enviar Postal</a>
-    </section>
+      <p class="hero-subtitle">La catedral del mar — Un monumento natural en Ribadeo, Lugo</p>
+      <div class="hero-cta">
+        <a href="/galeria" class="btn btn-primary">Ver Galería</a>
+        <a href="/postal" class="btn btn-secondary">Enviar Postal</a>
+      </div>
+    </div>
+  </section>
 
+  <div class="container">
     <section aria-labelledby="info-title">
       <h2 id="info-title">Descubre la Catedral del Mar</h2>
-      <p>En Galicia, cuando se junta la potencia del mar y la paciencia del tiempo, el resultado es una obra de arte sin igual. La Praia das Catedrais es un monumento natural con arcos de hasta 30 metros de altura.</p>
+      <p>En Galicia, cuando se junta la potencia del mar y la paciencia del tiempo, el resultado es una obra de arte sin igual. La <strong>Praia das Catedrais</strong> es un monumento natural con arcos de hasta 30 metros de altura.</p>
       <p>Declarada Monumento Natural por la Xunta de Galicia, esta playa ofrece una experiencia única donde la arquitectura natural se manifiesta en forma de arcos, columnas y bóvedas esculpidas por siglos de erosión marina.</p>
+    </section>
+
+    <section aria-labelledby="destacados-title">
+      <h2 id="destacados-title">Destacados</h2>
+      <div class="destacados-grid">
+        <article class="destacado" aria-labelledby="dest-arcos">
+          <h3 id="dest-arcos">Arcos Monumentales</h3>
+          <p>Arcos de piedra natural de hasta 30 metros de altura, esculpidos por el Atlántico durante milenios.</p>
+        </article>
+        <article class="destacado" aria-labelledby="dest-mareas">
+          <h3 id="dest-mareas">Mareas Vivas</h3>
+          <p>Cada visita es diferente. El mar borra las huellas anteriores pero permanece la sucesión de arcos monumentales.</p>
+        </article>
+        <article class="destacado" aria-labelledby="dest-natura">
+          <h3 id="dest-natura">Red Natura 2000</h3>
+          <p>Espacio protegido con un tramo costero de unos 15 kilómetros de largo en la Mariña Lucense.</p>
+        </article>
+      </div>
     </section>
 
     <section aria-labelledby="visita-title">
@@ -42,19 +45,49 @@
         <dt>Ubicación</dt>
         <dd>Ribadeo, provincia de Lugo, Galicia</dd>
         <dt>Acceso</dt>
-        <dd>Requiere reserva online del 1 julio al 30 septiembre y Semana Santa</dd>
+        <dd>Requiere reserva online del 1 de julio al 30 de septiembre y Semana Santa</dd>
         <dt>Parking</dt>
         <dd>Gratuito en el entorno</dd>
+        <dt>Entrada</dt>
+        <dd>Gratuita (reserva obligatoria en temporada alta)</dd>
       </dl>
+      <a href="/visitar" class="btn btn-primary">Más información</a>
     </section>
-  </main>
+  </div>
+</Layout>
 
-  <footer role="contentinfo">
-    <p>&copy; 2026 Playa de las Catedrales. Proyecto académico Multimedia.</p>
-    <a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="noopener noreferrer" aria-label="Validar HTML">Validar HTML</a>
-    <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" target="_blank" rel="noopener noreferrer" aria-label="Accesibilidad WCAG 2.1 AA">
-      <img src="https://www.w3.org/WAI/WCAG2AA-blue.png" alt="WCAG 2.1 AA Nivel AA">
-    </a>
-  </footer>
-</body>
-</html>
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+  .hero h1 { color: white; font-size: 3rem; margin-bottom: 0.5rem; }
+  .hero-subtitle { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
+  .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  .btn-primary { background: white; color: var(--color-primary); }
+  .btn-primary:hover, .btn-primary:focus { background: var(--color-bg); transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+  .btn-secondary:hover, .btn-secondary:focus { background: rgba(255,255,255,0.15); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+  section { margin-bottom: 3rem; }
+  .destacados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+  .destacado { background: var(--color-bg-alt); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .destacado h3 { margin-bottom: 0.5rem; }
+  dl { display: grid; grid-template-columns: 1fr 2fr; gap: 0.5rem 1rem; margin-bottom: 1.5rem; }
+  dt { font-weight: bold; color: var(--color-primary); }
+  @media (max-width: 768px) {
+    .hero { padding: 4rem 1rem; }
+    .hero h1 { font-size: 2.25rem; }
+    dl { grid-template-columns: 1fr; }
+  }
+</style>

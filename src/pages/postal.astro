@@ -41,28 +41,28 @@ if (Astro.request.method === 'POST') {
 
         <div class="form-group">
           <label for="nombre">Tu nombre <span aria-hidden="true">*</span></label>
-          <input type="text" id="nombre" name="nombre" required autocomplete="name" placeholder="Escribe tu nombre">
+          <input type="text" id="nombre" name="nombre" required aria-required="true" autocomplete="name" placeholder="Escribe tu nombre">
         </div>
 
         <div class="form-group">
-          <label for="email">Tu correo electronico <span aria-hidden="true">*</span></label>
-          <input type="email" id="email" name="email" required autocomplete="email" placeholder="tu@email.com">
+          <label for="email">Tu correo electrónico <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" placeholder="tu@email.com">
         </div>
 
         <div class="form-group">
           <label for="destinatario">Nombre del destinatario <span aria-hidden="true">*</span></label>
-          <input type="text" id="destinatario" name="destinatario" required placeholder="Nombre de quien recibe la postal">
+          <input type="text" id="destinatario" name="destinatario" required aria-required="true" placeholder="Nombre de quien recibe la postal">
         </div>
 
         <div class="form-group">
           <label for="email-destinatario">Correo del destinatario <span aria-hidden="true">*</span></label>
-          <input type="email" id="email-destinatario" name="email-destinatario" required placeholder="destinatario@email.com">
+          <input type="email" id="email-destinatario" name="email-destinatario" required aria-required="true" placeholder="destinatario@email.com">
         </div>
 
         <div class="form-group">
           <label for="mensaje">Mensaje <span aria-hidden="true">*</span></label>
-          <textarea id="mensaje" name="mensaje" required rows="4" maxlength="200" placeholder="Escribe tu mensaje (maximo 200 caracteres)"></textarea>
-          <p id="ayuda-caracteres" class="help-text">Maximo 200 caracteres</p>
+          <textarea id="mensaje" name="mensaje" required aria-required="true" aria-describedby="ayuda-caracteres" rows="4" maxlength="200" placeholder="Escribe tu mensaje (máximo 200 caracteres)"></textarea>
+          <p id="ayuda-caracteres" aria-live="polite">Máximo 200 caracteres</p>
         </div>
 
         <button type="submit">Enviar Postal</button>
@@ -86,7 +86,7 @@ if (Astro.request.method === 'POST') {
   input, textarea { width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; }
   input:focus, textarea:focus { outline: 3px solid var(--color-accent); outline-offset: 2px; border-color: var(--color-accent); }
   input:user-invalid, textarea:user-invalid { border-color: #d00; }
-  .help-text { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
+  .help-text, [aria-live="polite"] { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
   button { background: var(--color-accent); color: white; border: none; padding: 1rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
   button:hover, button:focus { background: var(--color-primary); }
   .mensaje-exito { background: #d4edda; padding: 2rem; border-radius: 8px; text-align: center; }
