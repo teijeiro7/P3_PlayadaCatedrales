@@ -1,72 +1,1767 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Historia" description="Historia y geología de la Playa de las Catedrales, un monumento natural único en Galicia">
-  <div class="container">
-    <section aria-labelledby="historia-title">
-      <h1 id="historia-title">Historia y Geología</h1>
-      <p>La Praia das Catedrais es una de las playas más extraordinarias de Galicia, declarada Monumento Natural por la Xunta de Galicia.</p>
-    </section>
+<Layout
+  title="Historia"
+  description="Historia y geologia de la Playa de las Catedrales. Desde su formacion hace 500 millones de años hasta convertirse en Monumento Natural de Galicia."
+  variant="home"
+>
+  <section class="hero-parallax" aria-labelledby="hero-title">
+    <div class="hero-parallax-bg" aria-hidden="true"></div>
+    <div class="hero-parallax-overlay"></div>
+    <div class="hero-parallax-content">
+      <span class="hero-eyebrow">PRAIA DAS CATEDRAIS</span>
+      <h1 id="hero-title" class="hero-title">
+        Historia de un<br />Monumento Natural
+      </h1>
+      <p class="hero-subtitle">
+        500 millones de años esculpiendo la costa de Galicia. La obra maestra
+        del Atlantico.
+      </p>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 5v14m0 0l-6-6m6 6l6-6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
 
-    <section aria-labelledby="formacion-title">
-      <h2 id="formacion-title">Cómo se Formó</h2>
-      <p>Hace millones de años, el océano Atlántico fue erosionando suavemente los acantilados de pizarra, creando un espectacular relieve arquitectónico:</p>
-      <ul>
-        <li><strong>Arcos de hasta 30 metros</strong> de altura</li>
-        <li><strong>Columnas y bóvedas</strong> naturales</li>
-        <li><strong>Pasadizos y grutas</strong> solo visibles en marea baja</li>
-      </ul>
-    </section>
+  <section class="stats-history" aria-label="Datos historicos">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number" data-target="500">0</span><span
+          class="stat-unit">M años</span
+        >
+        <span class="stat-label">Antiguedad geologica</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="880">0</span><span
+          class="stat-unit">m</span
+        >
+        <span class="stat-label">Longitud de la playa</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="30">0</span><span
+          class="stat-unit">m</span
+        >
+        <span class="stat-label">Altura de los arcos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="28">0</span><span
+          class="stat-unit">,94 ha</span
+        >
+        <span class="stat-label">Monumento Natural</span>
+      </div>
+    </div>
+  </section>
 
-    <section aria-labelledby="datos-title">
-      <h2 id="datos-title">Datos del Monumento Natural</h2>
-      <dl>
-        <dt>Declaración</dt>
-        <dd>Monumento Natural por la Xunta de Galicia</dd>
-        <dt>Superficie</dt>
-        <dd>28,94 hectáreas (20 hectáreas de aguas marinas)</dd>
-        <dt>Ubicación</dt>
-        <dd>Municipio de Ribadeo, provincia de Lugo</dd>
-        <dt>Acceso</dt>
-        <dd>Requiere autorización en temporada alta</dd>
-      </dl>
-    </section>
+  <section class="intro-section" aria-labelledby="intro-title">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text reveal">
+          <span class="section-label">ORIGEN Y EVOLUCION</span>
+          <h2 id="intro-title" class="section-title">
+            La Catedral que Edifico el Mar
+          </h2>
+          <p>
+            La Praia das Catedrais, conocida originalmente como <strong
+              >Praia de Augas Santas</strong
+            > (Playa de las Aguas Santas), es una de las formaciones geologicas mas
+            extraordinarias de la Peninsula Iberica. Sus acantilados de pizarra y
+            esquisto, de mas de 500 millones de años de antiguedad, han sido esculpidos
+            pacientemente por el embate del oceano Atlantico.
+          </p>
+          <p>
+            Ubicada en la parroquia de Devesa, municipio de Ribadeo, en la costa
+            de la provincia de Lugo, esta playa se extiende a lo largo de 880
+            metros sobre la Rasa Cantabrica &mdash; una plataforma costera casi
+            horizontal que provoca que la marea suba con una rapidez asombrosa.
+          </p>
+          <div class="intro-badge">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            <span
+              >Declarada Monumento Natural en 2005 por la Xunta de Galicia</span
+            >
+          </div>
+        </div>
+        <div class="intro-visual reveal">
+          <div class="intro-image-frame">
+            <div class="intro-image-bg"></div>
+          </div>
+          <div class="intro-floating-card">
+            <span class="floating-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                  stroke="currentColor"
+                  stroke-width="1.5"></path>
+                <path d="M9 22V12h6v10" stroke="currentColor" stroke-width="1.5"
+                ></path>
+              </svg>
+            </span>
+            <span class="floating-label"
+              >Parroquia de Devesa<br />Ribadeo, Lugo</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section aria-labelledby="legenda-title">
-      <h2 id="legenda-title">La Leyenda</h2>
-      <p>Según la leyenda local, los gigantes que construyeron la catedral de Santiago de Compostela estaban tan felices que decidieron construir otra en el mar, labor que todavía podemos admirar hoy.</p>
-    </section>
-  </div>
+  <section class="timeline-section" aria-labelledby="timeline-title">
+    <div class="container">
+      <div class="timeline-header">
+        <span class="section-label">CRONOLOGIA</span>
+        <h2 id="timeline-title" class="section-title section-title-centered">
+          500 Millones de años de Historia
+        </h2>
+        <p class="section-subtitle">
+          De roca primigenia a icono mundial, cada momento ha dejado huella en
+          esta costa.
+        </p>
+      </div>
+      <div
+        class="vtimeline"
+        role="list"
+        aria-label="Linea del tiempo historica"
+      >
+        <div class="vtimeline-line" aria-hidden="true"></div>
+
+        <div class="vtimeline-item vtimeline-left reveal" role="listitem">
+          <div class="vtimeline-dot vtimeline-dot-ancient">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">~500 M años</span>
+            <h3>Formacion Rocosa</h3>
+            <p>
+              Las rocas de pizarra y esquisto que forman los acantilados se
+              originan durante la era Cambrico-Ordovicica, convirtiendose en una
+              de las formaciones geologicas mas antiguas de la Peninsula
+              Iberica.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-right reveal" role="listitem">
+          <div class="vtimeline-dot vtimeline-dot-ancient">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3v18m-6-6l6 6 6-6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">Millones de años</span>
+            <h3>Escultura del Atlantico</h3>
+            <p>
+              Las olas del Cantabrico, el viento y el agua salada erosionan las
+              capas de distinta dureza de la roca, creando arcos de mas de 30
+              metros, grutas de decenas de metros y pasillos de arena entre
+              bloques.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-left reveal" role="listitem">
+          <div class="vtimeline-dot">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
+                stroke="currentColor"
+                stroke-width="2"></path>
+              <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"
+              ></circle>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">Epoca antigua</span>
+            <h3>Praia de Augas Santas</h3>
+            <p>
+              Los habitantes de la parroquia de Devesa conocen la playa como <em
+                >Augas Santas</em
+              > (Aguas Santas), un nombre que sugiere asociaciones sagradas pre-cristianas
+              con las aguas del lugar. La zona permanece como secreto local durante
+              siglos.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-right reveal" role="listitem">
+          <div class="vtimeline-dot">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                stroke="currentColor"
+                stroke-width="2"></path>
+              <path
+                d="M15 22v-6a2 2 0 00-2-2h-2a2 2 0 00-2 2v6"
+                stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">~1960s</span>
+            <h3>Nace &ldquo;As Catedrais&rdquo;</h3>
+            <p>
+              El nombre turistico &ldquo;Praia das Catedrais&rdquo; comienza a
+              popularizarse por la similitud de los arcos con los <strong
+                >arbotantes goticos</strong
+              > de las catedrales. La seccion mas fotografada, desde la Isla de Xan
+              Galo, se conoce como <em>As Carricelas</em>.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-left reveal" role="listitem">
+          <div class="vtimeline-dot vtimeline-dot-highlight">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">2005</span>
+            <h3>Monumento Natural</h3>
+            <p>
+              La Conselleria de Medio Ambiente de la <strong
+                >Xunta de Galicia</strong
+              > declara la playa Monumento Natural, protegiendo 28,94 hectareas (de
+              las cuales 20 son aguas marinas). Se reconoce oficialmente su valor
+              geologico y biologico excepcional.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-right reveal" role="listitem">
+          <div class="vtimeline-dot">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">2007</span>
+            <h3>Reserva UNESCO</h3>
+            <p>
+              La playa queda incluida dentro de la <strong
+                >Reserva de la Biosfera &ldquo;Rio Eo, Oscos e Terras de
+                Buron&rdquo;</strong
+              >, reconocimiento de la UNESCO que protege la riqueza natural de
+              toda la comarca.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-left reveal" role="listitem">
+          <div class="vtimeline-dot">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">2008 &ndash; 2012</span>
+            <h3>Reconocimiento Mundial</h3>
+            <p>
+              En 2008 es nombrada <strong>Mejor Playa de Europa</strong> (Youvox Voyage,
+              entre 8.000 playas). En 2012, TripAdvisor la situa como <strong
+                >#1 en Espana, #2 en Europa y #6 en el mundo</strong
+              > en sus Traveller's Choice Awards.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-right reveal" role="listitem">
+          <div class="vtimeline-dot">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">2014</span>
+            <h3>Natura 2000</h3>
+            <p>
+              Designada como <strong
+                >Zona Especial de Conservacion (ZEC ES1120005)</strong
+              > dentro de la red Natura 2000 europea, mediante Decreto 37/2014. El
+              espacio protegido abarca 304,36 hectareas en los municipios de Ribadeo
+              y Barreiros.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-left reveal" role="listitem">
+          <div class="vtimeline-dot">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+                stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">2015</span>
+            <h3>Sistema de Reservas</h3>
+            <p>
+              La Xunta de Galicia implementa un <strong
+                >sistema de autorizacion telematica gratuita</strong
+              > para controlar el acceso durante Semana Santa y del 1 de julio al
+              30 de septiembre. Una medida pionera para proteger el ecosistema de
+              la masificacion turistica.
+            </p>
+          </div>
+        </div>
+
+        <div class="vtimeline-item vtimeline-right reveal" role="listitem">
+          <div class="vtimeline-dot vtimeline-dot-highlight">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
+          </div>
+          <div class="vtimeline-card">
+            <span class="vtimeline-date">2017</span>
+            <h3>Blue Planet II</h3>
+            <p>
+              La BBC elige As Catedrais como el <strong
+                >unico lugar de Espana</strong
+              > en la legendaria serie <em>Blue Planet II</em>, narrada por Sir
+              David Attenborough. El episodio &ldquo;Costas&rdquo; utiliza
+              hiperlapso para mostrar la erosion costera, llevando la playa a
+              una audiencia de mas de <strong>250 millones de personas</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tabs-section" aria-labelledby="tabs-title">
+    <div class="container">
+      <span class="section-label">EXPLORA EN DETALLE</span>
+      <h2 id="tabs-title" class="section-title section-title-centered">
+        Tres Dimensiones de un Monumento
+      </h2>
+      <p class="section-subtitle">
+        Geologia, cultura y proteccion convergen en un lugar unico en el mundo.
+      </p>
+
+      <div class="tabs" role="tablist" aria-label="Secciones de informacion">
+        <button
+          role="tab"
+          class="tab-btn tab-btn-active"
+          id="tab-geologia"
+          aria-controls="panel-geologia"
+          aria-selected="true"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          Geologia
+        </button>
+        <button
+          role="tab"
+          class="tab-btn"
+          id="tab-cultura"
+          aria-controls="panel-cultura"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          Cultura
+        </button>
+        <button
+          role="tab"
+          class="tab-btn"
+          id="tab-proteccion"
+          aria-controls="panel-proteccion"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+              stroke="currentColor"
+              stroke-width="2"></path>
+          </svg>
+          Proteccion
+        </button>
+      </div>
+
+      <div
+        role="tabpanel"
+        class="tab-panel tab-panel-active"
+        id="panel-geologia"
+        aria-labelledby="tab-geologia"
+      >
+        <div class="tab-content-grid">
+          <div class="tab-text">
+            <h3>Arquitectura de la Tierra</h3>
+            <p>
+              Los acantilados de As Catedrais estan compuestos por <strong
+                >pizarra y esquisto</strong
+              >, rocas metamorficas formadas hace unos 500 millones de años. La
+              clave de su espectacular relieve reside en la diferente dureza de
+              sus capas estratigraficas: las capas mas blandas se erosionan mas
+              rapido, dejando en relieve los arcos, contrafuertes y pasadizos
+              que vemos hoy.
+            </p>
+            <p>
+              El proceso de erosion es <strong>continuo y visible</strong>. Las
+              olas del Cantabrico, el viento y las sales disueltas en el agua
+              marina actuan sin descanso, remodelando la costa centimetro a
+              centimetro. En mareas vivas, la retirada del mar revela corredores
+              de arena entre bloques rocosos de mas de 30 metros de altura.
+            </p>
+            <p>
+              La playa se asienta sobre la <strong>Rasa Cantabrica</strong>, una
+              plataforma costera casi horizontal que hace que la marea avance y
+              retroceda con enorme rapidez. Este terreno plano explica por que
+              los visitantes pueden caminar hasta playas vecinas durante la
+              bajamar, pero deben extremar la precaucion con la subida del agua.
+            </p>
+          </div>
+          <div class="tab-visual">
+            <div class="tab-image-placeholder tab-image-geo"></div>
+            <div class="tab-caption">
+              Formaciones de pizarra erosionada con arcos de mas de 30 metros
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        role="tabpanel"
+        class="tab-panel"
+        id="panel-cultura"
+        aria-labelledby="tab-cultura"
+        hidden
+      >
+        <div class="tab-content-grid">
+          <div class="tab-text">
+            <h3>Leyendas del Cantabrico</h3>
+            <p>
+              El nombre original &ldquo;Augas Santas&rdquo; (Aguas Santas) evoca
+              asociaciones sagradas pre-cristianas con las aguas de la playa. En
+              la mitologia gallega, las cuevas costeras y formaciones rocosas
+              inusuales suelen vincularse a los <strong>mouros</strong>, seres
+              mitologicos del folclore gallego que habitan en construcciones
+              subterraneas.
+            </p>
+            <p>
+              Segun la <strong>leyenda local</strong>, los gigantes que
+              construyeron la catedral de Santiago de Compostela estaban tan
+              satisfechos con su obra que decidieron construir otra en el mar
+              &mdash; una labor que todavia hoy podemos admirar en los arcos de
+              piedra que desafian al Atlantico.
+            </p>
+            <p>
+              Los acantilados albergan <strong>herba de namorar</strong> (&ldquo;hierba
+              de enamorar&rdquo;, simbolo romantico gallego), perexil de mar, toxo
+              y breixo. En las rocas, percebes, mexillons, lapas y bigaros &mdash;
+              todos pilares de la gastronomia gallega &mdash; dan fe de la rica relacion
+              entre el mar y la cultura de <em>A Marina lucense</em>.
+            </p>
+          </div>
+          <div class="tab-visual">
+            <div class="tab-image-placeholder tab-image-cultura"></div>
+            <div class="tab-caption">
+              La herba de namorar, simbolo romantico gallego, crece en los
+              acantilados
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        role="tabpanel"
+        class="tab-panel"
+        id="panel-proteccion"
+        aria-labelledby="tab-proteccion"
+        hidden
+      >
+        <div class="tab-content-grid">
+          <div class="tab-text">
+            <h3>Un Santuario Protegido</h3>
+            <p>
+              As Catedrais goza de multiples figuras de proteccion que reflejan
+              su extraordinario valor. En 2005 fue declarada <strong
+                >Monumento Natural</strong
+              > por la Xunta de Galicia, protegiendo 28,94 hectareas. En 2007 se integro
+              en la <strong
+                >Reserva de la Biosfera UNESCO &ldquo;Rio Eo, Oscos e Terras de
+                Buron&rdquo;</strong
+              >.
+            </p>
+            <p>
+              En 2014 fue designada <strong
+                >Zona Especial de Conservacion (ZEC)</strong
+              > dentro de la red Natura 2000 europea, ampliando el espacio protegido
+              a 304,36 hectareas en los municipios de Ribadeo y Barreiros. La franja
+              costera protegida se extiende aproximadamente 15 kilometros.
+            </p>
+            <p>
+              La Universidad de Santiago de Compostela (USC) ha realizado
+              estudios que advierten del <strong>riesgo de deterioro</strong> si las
+              visitas no se gestionan adecuadamente. Por ello, desde 2015 funciona
+              un sistema de reservas gratuito en temporada alta, convirtiendo a As
+              Catedrais en pionera de la gestion turistica sostenible en Galicia.
+            </p>
+          </div>
+          <div class="tab-visual">
+            <div class="tab-protection-badges">
+              <div class="protection-badge">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      stroke="currentColor"
+                      stroke-width="2"></path>
+                  </svg>
+                </span>
+                <strong>Monumento Natural</strong>
+                <span>2005 &middot; 28,94 ha</span>
+              </div>
+              <div class="protection-badge">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                      stroke="currentColor"
+                      stroke-width="2"></path>
+                  </svg>
+                </span>
+                <strong>UNESCO Biosphere</strong>
+                <span>2007 &middot; Rio Eo, Oscos e Terras de Buron</span>
+              </div>
+              <div class="protection-badge">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+                      stroke="currentColor"
+                      stroke-width="2"></path>
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="2"></circle>
+                  </svg>
+                </span>
+                <strong>Natura 2000 ZEC</strong>
+                <span>2014 &middot; 304,36 ha</span>
+              </div>
+              <div class="protection-badge">
+                <span class="badge-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                      stroke="currentColor"
+                      stroke-width="2"></path>
+                  </svg>
+                </span>
+                <strong>Bandera Azul</strong>
+                <span>Multiple años</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tides-section" aria-labelledby="tides-title">
+    <div class="container">
+      <span class="section-label">FENOMENO NATURAL</span>
+      <h2 id="tides-title" class="section-title section-title-centered">
+        El Espectaculo de las Mareas
+      </h2>
+      <p class="section-subtitle">
+        Dos experiencias radicalmente diferentes en el mismo lugar, separadas
+        por solo horas.
+      </p>
+      <div class="tides-grid">
+        <article
+          class="tide-card tide-card-low reveal"
+          aria-labelledby="tide-low-title"
+        >
+          <div class="tide-card-header">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 19V5m6 6l-6-6-6 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M17 12a5 5 0 01-10 0m10 0a5 5 0 00-10 0"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div class="tide-card-body">
+            <h3 id="tide-low-title">Bajamar &mdash; La Catedral Revelada</h3>
+            <p>
+              Cuando la marea se retira, la playa se transforma en una <strong
+                >catedral gotica al aire libre</strong
+              >. Los arcos de mas de 30 metros, las grutas de decenas de metros
+              y los pasillos de arena entre bloques rocosos quedan totalmente al
+              descubierto. En mareas vivas, se puede caminar hasta las playas
+              vecinas por la arena.
+            </p>
+            <ul>
+              <li>Playa de ~880m de largo, hasta 100m de ancho</li>
+              <li>Arco de la Isla de Xan Galo accesible</li>
+              <li>Cova de paso do Chinelo (cueva pasadizo)</li>
+              <li>Furnas (ojos naturales en la roca)</li>
+            </ul>
+          </div>
+        </article>
+        <article
+          class="tide-card tide-card-high reveal"
+          aria-labelledby="tide-high-title"
+        >
+          <div class="tide-card-header">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 5v14m-6-6l6 6 6-6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M2 12h3m3.5 0h3m3.5 0h3m3.5 0h3"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div class="tide-card-body">
+            <h3 id="tide-high-title">Pleamar &mdash; El Mar Recupera</h3>
+            <p>
+              Con la marea alta, la playa se reduce drasticamente a unos <strong
+                >320 metros</strong
+              > y la mayor parte de las formaciones quedan sumergidas. La arena fina
+              la hace apta para el bano, pero el verdadero espectaculo se contempla
+              desde el <strong>sendero de los acantilados</strong>, con vistas
+              panoramicas de toda la costa.
+            </p>
+            <ul>
+              <li>Acceso principal reducido a ~320m</li>
+              <li>Miradores en la parte superior</li>
+              <li>Vistas panoramicas de La Marina Lucense</li>
+              <li>Apta para el bano con oleaje moderado</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="tide-warning reveal">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+        <p>
+          <strong>Precaucion:</strong> Al estar sobre la Rasa Cantabrica (terreno
+          casi horizontal), la marea sube muy rapidamente. Nunca te alejes demasiado
+          y vuelve antes de que comience a subir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section" aria-labelledby="name-title">
+    <div class="name-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="name-content">
+        <span class="section-label" style="color: #89f5e5;">IDENTIDAD</span>
+        <h2 id="name-title" class="name-title">
+          De <em>Augas Santas</em> a <em>As Catedrais</em>
+        </h2>
+        <p class="name-text">
+          El nombre original de la playa, <strong>Praia de Augas Santas</strong
+          >, evoca la sacralidad de las aguas en la tradicion gallega. Fue a
+          partir de los años 1960 cuando el nombre turistico <strong
+            >&ldquo;As Catedrais&rdquo;</strong
+          > comenzo a utilizarse, inspirado por la semejanza de los arcos de piedra
+          con los arbotantes y contrafuertes de las catedrales goticas.
+        </p>
+        <p class="name-text">
+          La seccion mas fotografada, que parte de la <strong
+            >Isla de Xan Galo</strong
+          >, se conoce tradicionalmente como <em>As Carricelas</em>. A su
+          izquierda se encuentra Augas Santas propiamente dicha. Juntas forman
+          el conjunto que el mundo admira como la Playa de las Catedrales
+          &mdash; <em>os autenticos piares da terra</em>, los autenticos pilares
+          de la tierra.
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
 
+<script>
+  const revealElements = document.querySelectorAll(".reveal");
+  const statNumbers = document.querySelectorAll(".stat-number");
+  let statsCounted = false;
+
+  const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach((el) => revealObserver.observe(el));
+
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !statsCounted) {
+          statsCounted = true;
+          statNumbers.forEach((counter) => {
+            const target = parseInt(counter.dataset.target);
+            const duration = 2000;
+            const start = performance.now();
+            const step = (timestamp) => {
+              const progress = Math.min((timestamp - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              counter.textContent = Math.floor(eased * target);
+              if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  const statsBar = document.querySelector(".stats-history");
+  if (statsBar) statsObserver.observe(statsBar);
+
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("aria-controls");
+      tabButtons.forEach((b) => {
+        b.classList.remove("tab-btn-active");
+        b.setAttribute("aria-selected", "false");
+        b.setAttribute("tabindex", "-1");
+      });
+      tabPanels.forEach((p) => {
+        p.classList.remove("tab-panel-active");
+        p.setAttribute("hidden", "");
+      });
+      btn.classList.add("tab-btn-active");
+      btn.setAttribute("aria-selected", "true");
+      btn.setAttribute("tabindex", "0");
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.classList.add("tab-panel-active");
+        target.removeAttribute("hidden");
+      }
+    });
+
+    btn.addEventListener("keydown", (e) => {
+      const tabs = Array.from(tabButtons);
+      const idx = tabs.indexOf(btn);
+      let newIdx;
+      if (e.key === "ArrowRight") {
+        newIdx = (idx + 1) % tabs.length;
+      } else if (e.key === "ArrowLeft") {
+        newIdx = (idx - 1 + tabs.length) % tabs.length;
+      } else if (e.key === "Home") {
+        newIdx = 0;
+      } else if (e.key === "End") {
+        newIdx = tabs.length - 1;
+      } else {
+        return;
+      }
+      e.preventDefault();
+      tabs[newIdx].click();
+      tabs[newIdx].focus();
+    });
+  });
+</script>
+
 <style>
+  .hero-parallax {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: -80px;
+    padding-top: 80px;
+    background-color: #001e2b;
+  }
+
+  .hero-parallax-bg {
+    position: absolute;
+    inset: -20%;
+    background-image: url("/images/playa-catedrales-hero.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: #001e2b;
+    z-index: 0;
+  }
+
+  .hero-parallax-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 30, 43, 0.5) 0%,
+      rgba(0, 71, 94, 0.3) 50%,
+      rgba(0, 30, 43, 0.7) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-parallax-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #57c5b6;
+    background: rgba(87, 197, 182, 0.1);
+    border: 1px solid rgba(87, 197, 182, 0.3);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+    animation: heroReveal 1s ease-out;
+  }
+
+  .hero-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: white;
+    margin: 0 0 1.5rem;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    animation: heroReveal 1s ease-out 0.2s both;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+    animation: heroReveal 1s ease-out 0.4s both;
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    animation: scrollBounce 2.5s ease-in-out infinite;
+  }
+
+  @keyframes heroReveal {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scrollBounce {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+      opacity: 1;
+    }
+  }
+
+  .stats-history {
+    background: #00475e;
+    padding: 3rem 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stats-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+  }
+
+  .stat-unit {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #57c5b6;
+    margin-left: 0.15rem;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #89f5e5;
+    margin-top: 0.5rem;
+  }
+
   .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #57c5b6;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: #00475e;
+    margin: 0 0 1.5rem;
+  }
+
+  .section-title-centered {
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #40484c;
+    text-align: center;
+    max-width: 650px;
+    margin: -0.5rem auto 3rem;
+  }
+
+  .intro-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .intro-text p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #191c1e;
+    margin: 0 0 1.25rem;
+  }
+
+  .intro-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #57c5b6;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    margin-top: 1.5rem;
+  }
+
+  .intro-visual {
+    position: relative;
+  }
+
+  .intro-image-frame {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    transform: rotate(-2deg);
+    transition: transform 0.7s;
+  }
+
+  .intro-visual:hover .intro-image-frame {
+    transform: rotate(0deg);
+  }
+
+  .intro-image-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/catedrais-arcos.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .intro-floating-card {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: white;
+    color: #00475e;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 71, 94, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .floating-icon {
+    color: #57c5b6;
+  }
+
+  .floating-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .timeline-section {
+    padding: 6rem 1.5rem;
+    background: #f2f3f6;
+  }
+
+  .timeline-header {
+    margin-bottom: 4rem;
+  }
+
+  .vtimeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .vtimeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #57c5b6, #00475e, #57c5b6);
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+
+  .vtimeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .vtimeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .vtimeline-left {
+    flex-direction: row;
+    padding-right: calc(50% + 2rem);
+    text-align: right;
+  }
+
+  .vtimeline-right {
+    flex-direction: row-reverse;
+    padding-left: calc(50% + 2rem);
+    text-align: left;
+  }
+
+  .vtimeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00475e;
+    box-shadow: 0 4px 16px rgba(0, 71, 94, 0.15);
+    border: 3px solid #57c5b6;
+    z-index: 2;
+  }
+
+  .vtimeline-dot-ancient {
+    background: #edeef1;
+    border-color: #c0c7cd;
+    color: #00475e;
+  }
+
+  .vtimeline-dot-highlight {
+    background: #f7bb78;
+    border-color: #f7bb78;
+    color: #00475e;
+  }
+
+  .vtimeline-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .vtimeline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 71, 94, 0.12);
+  }
+
+  .vtimeline-date {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #57c5b6;
+    background: rgba(87, 197, 182, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+
+  .vtimeline-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #00475e;
+    margin: 0 0 0.5rem;
+  }
+
+  .vtimeline-card p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #40484c;
+    margin: 0;
+  }
+
+  .tabs-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border: 2px solid #edeef1;
+    background: white;
+    color: #40484c;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+  }
+
+  .tab-btn:hover {
+    border-color: #57c5b6;
+    color: #00475e;
+  }
+
+  .tab-btn-active {
+    background: #00475e;
+    color: white;
+    border-color: #00475e;
+  }
+
+  .tab-btn-active:hover {
+    background: #1a5f7a;
+    color: white;
+  }
+
+  .tab-panel {
+    display: none;
+    animation: tabFadeIn 0.4s ease-out;
+  }
+
+  .tab-panel-active {
+    display: block;
+  }
+
+  @keyframes tabFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tab-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .tab-text h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #00475e;
+    margin: 0 0 1rem;
+  }
+
+  .tab-text p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #191c1e;
+    margin: 0 0 1rem;
+  }
+
+  .tab-visual {
+    position: relative;
+  }
+
+  .tab-image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .tab-image-geo {
+    background-image: url("/images/catedrais-vista-aerea.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .tab-image-cultura {
+    background-image: url("/images/catedrais-arcos.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .tab-caption {
+    font-size: 0.8125rem;
+    color: #40484c;
+    margin-top: 0.75rem;
+    font-style: italic;
+  }
+
+  .tab-protection-badges {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .protection-badge {
+    background: white;
+    border: 1px solid #edeef1;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .protection-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 71, 94, 0.1);
+  }
+
+  .badge-icon {
+    display: block;
+    color: #57c5b6;
+    margin-bottom: 0.75rem;
+  }
+
+  .protection-badge strong {
+    display: block;
+    font-size: 0.9375rem;
+    color: #00475e;
+    margin-bottom: 0.25rem;
+  }
+
+  .protection-badge span {
+    font-size: 0.75rem;
+    color: #40484c;
+  }
+
+  .tides-section {
+    padding: 6rem 1.5rem;
+    background: #f2f3f6;
+  }
+
+  .tides-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .tide-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s;
+  }
+
+  .tide-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .tide-card-header {
+    padding: 2rem 2rem 0;
+    color: #00475e;
+  }
+
+  .tide-card-low .tide-card-header {
+    color: #159895;
+  }
+
+  .tide-card-high .tide-card-header {
+    color: #1a5f7a;
+  }
+
+  .tide-card-body {
+    padding: 1.25rem 2rem 2rem;
+  }
+
+  .tide-card-body h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #00475e;
+    margin: 0 0 0.75rem;
+  }
+
+  .tide-card-body p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #40484c;
+    margin: 0 0 1rem;
+  }
+
+  .tide-card-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tide-card-body li {
+    font-size: 0.875rem;
+    color: #40484c;
+    padding: 0.375rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .tide-card-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .tide-card-low .tide-card-body li::before {
+    background: #159895;
+  }
+
+  .tide-card-high .tide-card-body li::before {
+    background: #1a5f7a;
+  }
+
+  .tide-warning {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(247, 187, 120, 0.1);
+    border: 1px solid rgba(247, 187, 120, 0.3);
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .tide-warning svg {
+    color: #f7bb78;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tide-warning p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #191c1e;
+    margin: 0;
+  }
+
+  .name-section {
+    padding: 6rem 1.5rem;
+    background: #00475e;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .name-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, #00475e, #1a5f7a);
+    opacity: 0.5;
+  }
+
+  .name-content {
+    position: relative;
+    z-index: 1;
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 1rem;
+    text-align: center;
   }
-  section {
-    margin-bottom: 3rem;
+
+  .name-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 600;
+    color: white;
+    margin: 0 0 1.5rem;
+    line-height: 1.3;
   }
-  ul {
-    list-style-type: square;
-    padding-left: 1.5rem;
+
+  .name-text {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 1.25rem;
   }
-  li {
-    margin-bottom: 0.5rem;
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
   }
-  dl {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 0.5rem 1rem;
+
+  .revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
-  dt {
-    font-weight: bold;
-    color: var(--color-primary);
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+    .hero-title,
+    .hero-subtitle,
+    .hero-eyebrow {
+      animation: none;
+    }
+    .hero-scroll-hint {
+      display: none;
+    }
+    .hero-parallax-bg {
+      background-attachment: scroll;
+    }
+    .vtimeline-card:hover {
+      transform: none;
+    }
+    .protection-badge:hover {
+      transform: none;
+    }
+    .tide-card:hover {
+      transform: none;
+    }
+    .tab-panel {
+      animation: none;
+    }
   }
-  @media (max-width: 600px) {
-    dl {
+
+  @media (max-width: 768px) {
+    .hero-parallax {
+      margin-top: -60px;
+      min-height: 500px;
+    }
+    .hero-parallax-bg {
+      background-attachment: scroll;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .intro-floating-card {
+      display: none;
+    }
+
+    .vtimeline-line {
+      left: 24px;
+    }
+    .vtimeline-left,
+    .vtimeline-right {
+      padding-left: 60px;
+      padding-right: 0;
+      text-align: left;
+      flex-direction: row;
+    }
+    .vtimeline-dot {
+      left: 24px;
+      width: 40px;
+      height: 40px;
+    }
+    .vtimeline-dot svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .tab-content-grid {
+      grid-template-columns: 1fr;
+    }
+    .tab-protection-badges {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .tides-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .stat-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+    }
+    .stat-item:last-child {
+      border-bottom: none;
+    }
+
+    .tab-protection-badges {
       grid-template-columns: 1fr;
     }
   }
