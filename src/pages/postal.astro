@@ -2,12 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 
 const imagenesPostal = [
-  { id: "catedrales", src: "/images/tarjeta-catedrales.jpg", alt: "Arcos monumentales", titulo: "Catedral Natural" },
-  { id: "atardecer", src: "/images/tarjeta-atardecer.jpg", alt: "Atardecer dorado", titulo: "Atardecer Magico" },
-  { id: "arena", src: "/images/tarjeta-arena.jpg", alt: "Arena dorada", titulo: "Tesoros de la Arena" },
-  { id: "paisaje", src: "/images/galeria-paisaje-01.jpg", alt: "Vista panoramica", titulo: "Panoramica" },
-  { id: "arcos", src: "/images/galeria-arcos-01.jpg", alt: "Arcos de piedra", titulo: "Arcos Centrales" },
-  { id: "mareas", src: "/images/galeria-mareas-01.jpg", alt: "Marea baja", titulo: "Mareas" },
+  { id: "catedrales", src: "/images/catedrais-arcos.jpg", alt: "Arcos monumentales de la Playa de las Catedrales", titulo: "Catedral Natural" },
+  { id: "atardecer", src: "/images/galeria-atardecer-01.jpg", alt: "Atardecer dorado sobre los acantilados", titulo: "Atardecer Magico" },
+  { id: "arena", src: "/images/galeria-detalles-01.jpg", alt: "Detalles y texturas de la playa", titulo: "Tesoros de la Arena" },
+  { id: "paisaje", src: "/images/galeria-paisaje-01.jpg", alt: "Vista panoramica de la playa", titulo: "Panoramica" },
+  { id: "arcos", src: "/images/playacatedrales.jpg", alt: "Arcos centrales de la playa", titulo: "Arcos Centrales" },
+  { id: "mareas", src: "/images/galeria-mareas-01.jpg", alt: "Formaciones en marea baja", titulo: "Mareas" },
 ];
 ---
 
@@ -144,7 +144,7 @@ const imagenesPostal = [
               </div>
 
               <div class="preview-image">
-                <img id="preview-img" src="/images/tarjeta-catedrales.jpg" alt="Postal" width="400" height="300" />
+                <img id="preview-img" src="/images/catedrais-arcos.jpg" alt="Postal" width="400" height="300" />
               </div>
 
               <div class="preview-body">
@@ -245,7 +245,7 @@ const imagenesPostal = [
       form.reset();
       form.style.display = 'block';
       document.getElementById('mensaje-exito').hidden = true;
-      previewImg.src = '/images/tarjeta-catedrales.jpg';
+      previewImg.src = '/images/catedrais-arcos.jpg';
       previewEmisor.textContent = 'Tu nombre';
       previewDestinatario.textContent = 'Destinatario';
       previewMensaje.textContent = 'Tu mensaje aparecera aqui...';
