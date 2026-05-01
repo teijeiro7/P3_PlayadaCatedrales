@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Declaración de Accesibilidad" description="Declaración de accesibilidad del sitio web de la Playa de las Catedrales conforme a WCAG 2.2 nivel AA">
+  <div class="container">
+    <h1>Declaración de Accesibilidad</h1>
+
+    <section aria-labelledby="compromiso-title">
+      <h2 id="compromiso-title">Compromiso con la Accesibilidad</h2>
+      <p>Nos comprometemos a garantizar que este sitio web sea accesible para todas las personas, independientemente de sus capacidades o tecnologías utilizadas. Este sitio cumple con las <strong>Pautas de Accesibilidad al Contenido Web (WCAG) 2.2</strong> en su nivel de conformidad <strong>AA</strong>.</p>
+    </section>
+
+    <section aria-labelledby="cumplimiento-title">
+      <h2 id="cumplimiento-title">Estado de Cumplimiento</h2>
+      <p>Este sitio web es <strong>parcialmente conforme</strong> con WCAG 2.2 nivel AA debido a las siguientes excepciones:</p>
+      <ul>
+        <li>Contenido multimedia de terceros (mapas embebidos)</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="navegacion-title">
+      <h2 id="navegacion-title">Navegación por Teclado</h2>
+      <p>Puedes navegar por todo el sitio usando solo el teclado:</p>
+      <ul>
+        <li><kbd>Tab</kbd> - Avanzar al siguiente elemento interactivo</li>
+        <li><kbd>Shift + Tab</kbd> - Retroceder al elemento anterior</li>
+        <li><kbd>Enter</kbd> o <kbd>Espacio</kbd> - Activar enlace o botón</li>
+        <li><kbd>Escape</kbd> - Cerrar menú o lightbox</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="funcionalidades-title">
+      <h2 id="funcionalidades-title">Funcionalidades de Accesibilidad</h2>
+      <ul>
+        <li><strong>Skip-link:</strong> Enlace para saltar al contenido principal al inicio de la página</li>
+        <li><strong>Estructura semántica:</strong> Encabezados jerárquicos (h1-h3), landmarks ARIA</li>
+        <li><strong>Texto alternativo:</strong> Todas las imágenes tienen descripciones textuales</li>
+        <li><strong>Contraste suficiente:</strong> Relación de contrato mínima de 4.5:1 en todos los textos</li>
+        <li><strong>Redimensionamiento:</strong> El texto puede aumentarse hasta 200% sin pérdida de contenido</li>
+        <li><strong>Formularios accesibles:</strong> Etiquetas asociadas, mensajes de error claros</li>
+        <li><strong>Subtítulos:</strong> Los vídeos incluyen pistas de subtítulos</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="validacion-title">
+      <h2 id="validacion-title">Validación</h2>
+      <p>El sitio ha sido validado con las siguientes herramientas:</p>
+      <ul>
+        <li><strong>WAVE</strong> (WebAIM)</li>
+        <li><strong>axe DevTools</strong></li>
+        <li><strong>Google Lighthouse</strong></li>
+        <li><strong>TAW</strong></li>
+        <li><strong>Validador HTML W3C</strong></li>
+        <li><strong>Validador textual</strong></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contacto</h2>
+      <p>Si encuentras alguna barrera de accesibilidad, por favor contáctanos a través del <a href="/postal">formulario de contacto</a>.</p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
+  section { margin-bottom: 2.5rem; }
+  kbd { background: #eee; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-family: monospace; }
+  ul { padding-left: 1.5rem; }
+  li { margin-bottom: 0.5rem; }
+</style>
