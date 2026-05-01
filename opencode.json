@@ -1,0 +1,11 @@
+{
+  "mcp": {
+    "notion": {
+      "type": "remote",
+      "command": ["npx", "-y", "notion"],
+      "enabled": true,
+      "environment": {},
+      "url": "https://mcp.notion.com/mcp"
+    }
+  }
+}

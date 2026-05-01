@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Historia" description="Historia y geología de la Playa de las Catedrales, un monumento natural único en Galicia">
+  <div class="container">
+    <section aria-labelledby="historia-title">
+      <h1 id="historia-title">Historia y Geología</h1>
+      <p>La Praia das Catedrais es una de las playas más extraordinarias de Galicia, declarada Monumento Natural por la Xunta de Galicia.</p>
+    </section>
+
+    <section aria-labelledby="formacion-title">
+      <h2 id="formacion-title">Cómo se Formó</h2>
+      <p>Hace millones de años, el oceano Atlantico fue erosionando suavemente los acantilados de pizarra, creando un espectaculoso relieve arquitectonico:</p>
+      <ul>
+        <li><strong>Arcos de hasta 30 metros</strong> de altura</li>
+        <li><strong>Columnas y bovedas</strong> naturales</li>
+        <li><strong>Pasadizos y grutas</strong> solo visibles en marea baja</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="datos-title">
+      <h2 id="datos-title">Datos del Monumento Natural</h2>
+      <dl>
+        <dt>Declaracion</dt>
+        <dd>Monumento Natural por la Xunta de Galicia</dd>
+        <dt>Superficie</dt>
+        <dd>28,94 hectareas (20 hectareas de aguas marinas)</dd>
+        <dt>Ubicacion</dt>
+        <dd>Municipio de Ribadeo, provincia de Lugo</dd>
+        <dt>Acceso</dt>
+        <dd>Requiere autorizacion en temporada alta</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="legenda-title">
+      <h2 id="legenda-title">La Leyenda</h2>
+      <p>Segun la leyenda local, los gigantes que construyeron la catedral de Santiago de Compostela were tan felices que decidieron construir otra en el mar, lavor que todavia podemos admirar hoy.</p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5rem 1rem;
+  }
+  dt {
+    font-weight: bold;
+    color: var(--color-primary);
+  }
+  @media (max-width: 600px) {
+    dl {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const galeria = [
+  { src: '/images/playa-general.jpg', alt: 'Vista panoramica de la Playa de las Catedrales con arcos monumentales', titulo: 'Vista Panoramica' },
+  { src: '/images/arcos01.jpg', alt: 'Arcos naturales de piedra pizarra', titulo: 'Los Arcos' },
+  { src: '/images/arena01.jpg', alt: 'Arena dorada entre formaciones rocosas', titulo: 'La Arena' },
+  { src: '/images/atardecer.jpg', alt: 'Atardecer en la playa con luz dorada', titulo: 'Atardecer' },
+  { src: '/images/marea-baja.jpg', alt: 'Formaciones rocosas reveladas en marea baja', titulo: 'Marea Baja' },
+  { src: '/images/paisaje.jpg', alt: 'Paisaje de la costa lucense', titulo: 'El Paisaje' }
+];
+---
+
+<Layout title="Galería" description="Galeria de imagenes de la Playa de las Catedrales">
+  <div class="container">
+    <h1>Galeria de Imagenes</h1>
+    <p>Coleccion de imagenes que muestran la belleza natural de la Praia das Catedrais.</p>
+    
+    <div class="galeria" role="list" aria-label="Galeria de imagenes de la Playa de las Catedrales">
+      {galeria.map((img, index) => (
+        <figure role="listitem">
+          <img src={img.src} alt={img.alt} loading="lazy" width="400" height="300">
+          <figcaption>{img.titulo}</figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <section class="video" aria-labelledby="video-title">
+      <h2 id="video-title">Video Promocional</h2>
+      <video controls preload="none" aria-label="Video promocional de la Playa de las Catedrales">
+        <source src="/videos/promocional.mp4" type="video/mp4">
+        <track kind="subtitles" src="/videos/subtitulos.vtt" srclang="es" label="Espanol" default>
+        Tu navegador no soporta reproduccion de video.
+      </video>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  figure { margin: 0; }
+  img { width: 100%; height: auto; border-radius: 8px; }
+  figcapton { margin-top: 0.5rem; font-size: 0.9rem; color: #666; }
+  .video { margin-top: 3rem; }
+  video { width: 100%; max-width: 800px; border-radius: 8px; }
+</style>

@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Cómo Visitar" description="Informacion practica para visitar la Playa de las Catedrales: horario, accesibilidad, transporte">
+  <div class="container">
+    <h1>Como Visitar</h1>
+    
+    <section aria-labelledby="acceso-title">
+      <h2 id="acceso-title">Acceso y Horarios</h2>
+      <p>El acceso a la playa es gratuito. Durante tertentu epocas del ano se requiere autorizacion:</p>
+      <ul>
+        <li><strong>Semana Santa</strong>: Autorizacion necesaria</li>
+        <li><strong>1 julio - 30 septiembre</strong>: Autorizacion necesaria</li>
+        <li><strong>Resto del ano</strong>: Acceso libre sin reserva</li>
+      </ul>
+      <p><a href="https://ascatedrais.xunta.gal" target="_blank" rel="noopener noreferrer">Reservar entrada</a></p>
+    </section>
+
+    <section aria-labelledby="llegar-title">
+      <h2 id="llegar-title">Como Llegar</h2>
+      <dl>
+        <dt>En coche</dt>
+        <dd>Desde Lugo, 86 km por N-640 y E-70/A-8. Parking gratuito disponible.</dd>
+        <dt>En autobus</dt>
+        <dd>Lineas regulares desde Lugo, A Coruña o Santiago hasta Ribadeo. Desde alli taxi o transfer.</dd>
+        <dt>Direccion</dt>
+        <dd>Playa de As Catedrais, San Miguel de Reinante, Ribadeo, Lugo</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="marea-title">
+      <h2 id="marea-title">Marea y Mareas</h2>
+      <p>El acceso a los arcos y formaciones rocosas <strong>solo es posible durante la marea baja</strong>. El resto del tiempo, gran parte del arenal queda cubierto por el mar.</p>
+      <p>Consulta el <a href="https://www.meteogalicia.gal/mareas" target="_blank" rel="noopener noreferrer">horario de mareas</a> antes de tu visita.</p>
+    </section>
+
+    <section aria-labelledby="accesibilidad-title">
+      <h2 id="accesibilidad-title">Accesibilidad</h2>
+      <p><strong>La playa NO es completamente accesible</strong> para personas con movilidad reducida:</p>
+      <ul>
+        <li>El acceso al arenal implica <strong>bajar escaleras</strong></li>
+        <li>El terreno es rocoso y arenoso</li>
+        <li>Existen <strong>miradores adaptados</strong> desde los que se puede observar el paisaje sin bajar a la playa</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="recomendaciones-title">
+      <h2 id="recomendaciones-title">Recomendaciones</h2>
+      <ul>
+        <li>Llega con al menos 30 minutos de antelacion</li>
+        <li>Consulta primero el horario de marea baja</li>
+        <li>Reserva con 3-5 dias de antelacion en temporada alta</li>
+        <li>No te llevado arena ni piedras de recuerdo</li>
+        <li>Respeta las normas establecidas para proteger la zona</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="map-section">
+      <h2 id="map-section">Ubicacion</h2>
+      <div class="mapa" role="application" aria-label="Mapa de ubicacion de la Playa de las Catedrales">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11654.334724589!2d-7.55!3d43.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2sPlayas+Catedrais!5e0!3m2!1smk2!2ses!4v1" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de la Playa de las Catedrales">
+        </iframe>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
+  section { margin-bottom: 2.5rem; }
+  ul { padding-left: 1.5rem; }
+  li { margin-bottom: 0.5rem; }
+  dl { display: grid; grid-template-columns: 1fr 2fr; gap: 0.5rem 1rem; }
+  dt { font-weight: bold; color: var(--color-primary); }
+  @media (max-width: 600px) { dl { grid-template-columns: 1fr; } }
+</style>
