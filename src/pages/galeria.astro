@@ -33,11 +33,116 @@ const imagenes = [
     descripcion: 'El sol se oculta pintando el cielo de tonos anaranjados'
   },
   { 
-    src: '/images/hero-vista-aerea.jpg', 
-    alt: 'Vista aerea de la Playa de las Catedrales mostrando la costa en zigzag', 
+    src: '/images/galeria-arcos-cueva.jpg', 
+    alt: 'Vista desde el interior de una cueva marina hacia los arcos de piedra', 
+    categoria: 'arcos',
+    titulo: 'Desde la Gruta',
+    descripcion: 'Una perspectiva intima desde el corazon de las catedrales de piedra'
+  },
+  { 
+    src: '/images/galeria-arcos-cuevas-agua.jpg', 
+    alt: 'Agua cristalina fluyendo entre las cuevas y arcos naturales', 
+    categoria: 'arcos',
+    titulo: 'Reflejos en la Cueva',
+    descripcion: 'La marea baja deja pozas que actuan como espejos naturales'
+  },
+  { 
+    src: '/images/galeria-paisajes-turista-rocas.jpg', 
+    alt: 'Visitante contemplando la inmensidad de los acantilados y el mar', 
     categoria: 'paisajes',
-    titulo: 'Perspectiva Aerea',
-    descripcion: 'Una vision unica desde el cielo de este monumento natural'
+    titulo: 'Contemplacion',
+    descripcion: 'La escala humana frente a la majestuosidad de la naturaleza'
+  },
+  { 
+    src: '/images/galeria-atardecer-faro.jpg', 
+    alt: 'Cielo dramatico al atardecer sobre la costa lucense', 
+    categoria: 'atardecer',
+    titulo: 'Cielo Dramatico',
+    descripcion: 'Nubes incendiadas sobre el horizonte del mar Cantabrico'
+  },
+  { 
+    src: '/images/galeria-arcos-elefante.jpg', 
+    alt: 'El famoso Arco del Elefante, una formacion rocosa iconica', 
+    categoria: 'arcos',
+    titulo: 'El Elefante de Piedra',
+    descripcion: 'Una de las esculturas naturales mas reconocibles de la playa'
+  },
+  { 
+    src: '/images/galeria-atardecer-roca-silueta.jpg', 
+    alt: 'Silueta de formaciones rocosas contra el sol poniente', 
+    categoria: 'atardecer',
+    titulo: 'Ocaso en las Rocas',
+    descripcion: 'Sombras alargadas y luz dorada en la marea baja'
+  },
+  { 
+    src: '/images/galeria-atardecer-silueta-mar.jpg', 
+    alt: 'El sol desapareciendo bajo el horizonte marino entre rocas', 
+    categoria: 'atardecer',
+    titulo: 'Ultimo Rayo de Sol',
+    descripcion: 'El momento magico en que el dia se rinde ante la noche'
+  },
+  { 
+    src: '/images/galeria-atardecer-dorado-rocas.jpg', 
+    alt: 'Luz dorada bañando los acantilados y la arena humeda', 
+    categoria: 'atardecer',
+    titulo: 'Bañado en Oro',
+    descripcion: 'La arena humeda refleja la luz mas calida del dia'
+  },
+  { 
+    src: '/images/galeria-arcos-reflejos.jpg', 
+    alt: 'Arcos monumentales reflejados en el agua cristalina de la orilla', 
+    categoria: 'arcos',
+    titulo: 'Doble Catedral',
+    descripcion: 'La simetria perfecta creada por los reflejos en la marea baja'
+  },
+  { 
+    src: '/images/galeria-arcos-arena-perspectiva.jpg', 
+    alt: 'Perspectiva baja de los arcos mostrando la inmensidad de la piedra', 
+    categoria: 'arcos',
+    titulo: 'Columnas del Atlantico',
+    descripcion: 'La fuerza del mar esculpiendo pasillos infinitos'
+  },
+  { 
+    src: '/images/galeria-paisajes-playa-rocas.jpg', 
+    alt: 'Vista general de la playa con sus caracteristicas rocas oscuras y arena blanca', 
+    categoria: 'paisajes',
+    titulo: 'Contraste Costero',
+    descripcion: 'La armonia entre el basalto oscuro y la arena clara'
+  },
+  { 
+    src: '/images/galeria-detalles-percebes-textura.jpg', 
+    alt: 'Detalle de percebes y vida marina en las rocas de la costa', 
+    categoria: 'detalles',
+    titulo: 'Vida en la Roca',
+    descripcion: 'El ecosistema cantabrico en su estado mas puro'
+  },
+  { 
+    src: '/images/galeria-detalles-rocas-textura.jpg', 
+    alt: 'Detalle macro de las texturas de la pizarra erosionada', 
+    categoria: 'detalles',
+    titulo: 'Escultura Geologica',
+    descripcion: 'Lineas y patrones esculpidos por el viento y el agua'
+  },
+  { 
+    src: '/images/galeria-paisajes-panoramica-acantilados.jpg', 
+    alt: 'Vista panoramica de los acantilados y la costa de Ribadeo', 
+    categoria: 'paisajes',
+    titulo: 'Guardianes de la Costa',
+    descripcion: 'Acantilados vertiginosos que protegen la Praia das Catedrais'
+  },
+  { 
+    src: '/images/galeria-paisajes-acantilados.jpg', 
+    alt: 'Vista panoramica de los acantilados de Ribadeo', 
+    categoria: 'paisajes',
+    titulo: 'Gigantes de Piedra',
+    descripcion: 'Muros naturales que protegen los secretos de la playa'
+  },
+  { 
+    src: '/images/galeria-detalles-cueva-interior.jpg', 
+    alt: 'Detalle del techo de una cueva con filtraciones de agua', 
+    categoria: 'detalles',
+    titulo: 'Techo de Cristal',
+    descripcion: 'Gotas que caen desde las bovedas naturales de piedra'
   },
   { 
     src: '/images/galeria-mareas.jpg', 
@@ -47,53 +152,11 @@ const imagenes = [
     descripcion: 'Las mareas revelan un mundo oculto de pozas y cuevas'
   },
   { 
-    src: '/images/galeria-textura-roca.jpg', 
-    alt: 'Detalle de los arcos naturales con textura de pizarra y musgo', 
-    categoria: 'arcos',
-    titulo: 'Textura del Tiempo',
-    descripcion: 'Cada arco cuenta una historia de 500 millones de anos'
-  },
-  { 
-    src: '/images/galeria-panoramica.jpg', 
-    alt: 'Vista general de la playa con su arena dorada y formaciones rocosas', 
-    categoria: 'paisajes',
-    titulo: 'Arena y Roca',
-    descripcion: 'El contraste entre la suave arena y la roca milenaria'
-  },
-  { 
-    src: '/images/galeria-siluetas.jpg', 
-    alt: 'Siluetas de los arcos contra un cielo anaranjado al atardecer', 
-    categoria: 'atardecer',
-    titulo: 'Siluetas al Ocaso',
-    descripcion: 'Los arcos se dibujan contra el cielo crepuscular'
-  },
-  { 
     src: '/images/galeria-percebes.jpg', 
     alt: 'Percebes en las rocas de la Playa de las Catedrales', 
     categoria: 'detalles',
     titulo: 'Percebes del Cantabrico',
     descripcion: 'Los frutos del mar que crecen en las rocas de la costa'
-  },
-  { 
-    src: '/images/galeria-costa.jpg', 
-    alt: 'Paisaje costero de la costa lucense con acantilados y mar Cantabrico', 
-    categoria: 'paisajes',
-    titulo: 'Costa Lucense',
-    descripcion: 'La belleza natural de la costa de Lugo en toda su extension'
-  },
-  { 
-    src: '/images/galeria-interior.jpg', 
-    alt: 'Arcos monumentales vistos desde el interior de la playa', 
-    categoria: 'arcos',
-    titulo: 'Catedral Natural',
-    descripcion: 'La perspectiva desde el interior revela la verdadera escala'
-  },
-  { 
-    src: '/images/galeria-arena.jpg', 
-    alt: 'Detalle de la arena y pequenas conchas en la orilla', 
-    categoria: 'detalles',
-    titulo: 'Tesoros de la Orilla',
-    descripcion: 'Pequenos detalles que hacen magica esta playa'
   },
   { 
     src: '/images/galeria-visitantes.jpg', 
@@ -293,19 +356,23 @@ const imagenes = [
       // Filter items with animation
       galleryItems.forEach(item => {
         if (filter === 'todas' || item.dataset.category === filter) {
+          item.style.display = 'block';
           item.classList.remove('gallery-hidden');
-          item.style.display = '';
-          setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
-          }, 50);
+          // Trigger reflow for animation
+          void item.offsetWidth;
+          item.style.opacity = '1';
+          item.style.transform = 'scale(1)';
         } else {
           item.style.opacity = '0';
           item.style.transform = 'scale(0.9)';
+          item.classList.add('gallery-hidden');
+          
+          // Wait for transition before hiding completely
           setTimeout(() => {
-            item.classList.add('gallery-hidden');
-            item.style.display = 'none';
-          }, 300);
+            if (item.classList.contains('gallery-hidden')) {
+              item.style.display = 'none';
+            }
+          }, 400);
         }
       });
     });
