@@ -114,7 +114,12 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="about-visual reveal">
           <div class="about-image-frame">
-            <div class="about-image-bg"></div>
+            <div class="about-image-bg">
+              <img
+                src="/images/galeria-panoramica.jpg"
+                alt="Vista panorámica de la playa"
+              />
+            </div>
           </div>
           <div class="about-floating-card">
             <span class="about-floating-number">Milenios</span>
@@ -595,13 +600,18 @@ import Layout from "../layouts/Layout.astro";
 <script>
   import * as THREE from "three";
 
-  const waterCanvas = document.getElementById("water-canvas");
-  let waterMesh, scene, camera, renderer;
+  const waterCanvas = document.getElementById(
+    "water-canvas",
+  ) as HTMLCanvasElement;
+  let waterMesh: THREE.Mesh,
+    scene: THREE.Scene,
+    camera: THREE.PerspectiveCamera,
+    renderer: THREE.WebGLRenderer;
   let mouseX = 0,
     mouseY = 0;
 
   if (waterCanvas) {
-    const hero = document.querySelector(".hero");
+    const hero = document.querySelector(".hero") as HTMLElement;
 
     const initWater = () => {
       scene = new THREE.Scene();
@@ -683,11 +693,13 @@ import Layout from "../layouts/Layout.astro";
 
     initWater();
 
-    hero.addEventListener("mousemove", (e) => {
-      const rect = hero.getBoundingClientRect();
-      mouseX = (e.clientX / rect.width) * 2 - 1;
-      mouseY = (e.clientY / rect.height) * 2 - 1;
-    });
+    if (hero) {
+      hero.addEventListener("mousemove", (e: MouseEvent) => {
+        const rect = hero.getBoundingClientRect();
+        mouseX = (e.clientX / rect.width) * 2 - 1;
+        mouseY = (e.clientY / rect.height) * 2 - 1;
+      });
+    }
 
     const resizeWater = () => {
       const w = waterCanvas.clientWidth;
@@ -723,13 +735,14 @@ import Layout from "../layouts/Layout.astro";
         if (entry.isIntersecting && !statsCounted) {
           statsCounted = true;
           statNumbers.forEach((counter) => {
-            const target = parseInt(counter.dataset.target);
+            const htmlCounter = counter as HTMLElement;
+            const target = parseInt(htmlCounter.dataset.target || "0");
             const duration = 2000;
             const start = performance.now();
-            const step = (timestamp) => {
+            const step = (timestamp: number) => {
               const progress = Math.min((timestamp - start) / duration, 1);
               const eased = 1 - Math.pow(1 - progress, 3);
-              counter.textContent = Math.floor(eased * target);
+              htmlCounter.textContent = String(Math.floor(eased * target));
               if (progress < 1) requestAnimationFrame(step);
             };
             requestAnimationFrame(step);
@@ -743,6 +756,40 @@ import Layout from "../layouts/Layout.astro";
 
   const statsBar = document.querySelector(".stats-bar");
   if (statsBar) statsObserver.observe(statsBar);
+
+  const videoPauseBtn = document.getElementById(
+    "video-pause-btn",
+  ) as HTMLButtonElement;
+  const heroVideo = document.querySelector(".hero-video") as HTMLVideoElement;
+  const pauseIcons = document.querySelectorAll<SVGElement>(
+    "#pause-icon-pause, #pause-icon-pause2",
+  );
+  const playIcon = document.querySelector<SVGElement>("#pause-icon-play");
+
+  if (heroVideo) {
+    heroVideo.play().catch(() => {
+      console.log("Autoplay blocked, waiting for interaction");
+    });
+  }
+
+  if (videoPauseBtn && heroVideo) {
+    videoPauseBtn.addEventListener("click", () => {
+      const paused = heroVideo.paused;
+      if (paused) {
+        heroVideo.play();
+        videoPauseBtn.setAttribute("aria-label", "Pausar video de fondo");
+        videoPauseBtn.setAttribute("aria-pressed", "false");
+        pauseIcons.forEach((el) => (el.style.display = ""));
+        if (playIcon) playIcon.style.display = "none";
+      } else {
+        heroVideo.pause();
+        videoPauseBtn.setAttribute("aria-label", "Reanudar video de fondo");
+        videoPauseBtn.setAttribute("aria-pressed", "true");
+        pauseIcons.forEach((el) => (el.style.display = "none"));
+        if (playIcon) playIcon.style.display = "";
+      }
+    });
+  }
 </script>
 
 <style>
@@ -766,6 +813,7 @@ import Layout from "../layouts/Layout.astro";
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
+    z-index: 1;
   }
 
   #water-canvas {
@@ -877,6 +925,30 @@ import Layout from "../layouts/Layout.astro";
     animation: scrollBounce 2.5s ease-in-out infinite;
   }
 
+  .video-pause-btn {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .video-pause-btn:hover,
+  .video-pause-btn:focus-visible {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
   @keyframes heroReveal {
     from {
       opacity: 0;
@@ -968,7 +1040,7 @@ import Layout from "../layouts/Layout.astro";
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-secondary);
+    color: var(--color-secondary-text);
     margin-bottom: 0.75rem;
     display: block;
   }
@@ -1019,7 +1091,7 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: var(--color-secondary);
+    color: var(--color-secondary-text);
     font-weight: 500;
     font-size: 0.9375rem;
     margin-top: 1.5rem;
@@ -1044,24 +1116,24 @@ import Layout from "../layouts/Layout.astro";
   .about-image-bg {
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      135deg,
-      var(--color-primary-deep) 0%,
-      var(--color-primary) 30%,
-      var(--color-secondary) 70%,
-      #89f5e5 100%
-    );
+  }
+
+  .about-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .about-floating-card {
     position: absolute;
     bottom: -1.5rem;
     left: -1.5rem;
-    background: var(--color-secondary);
+    background: var(--color-secondary-text);
     color: white;
     padding: 1.5rem 2rem;
     border-radius: 12px;
-    box-shadow: 0 12px 40px rgba(87, 197, 182, 0.3);
+    box-shadow: 0 12px 40px rgba(47, 132, 120, 0.35);
     display: none;
   }
 
@@ -1151,22 +1223,22 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .mosaic-bg-arcos {
-    background-image: url("/images/catedrais-arcos.jpg");
+    background-image: url("/images/seccion-arcos.jpg");
     background-size: cover;
     background-position: center;
   }
   .mosaic-bg-cuevas {
-    background-image: url("/images/catedrais-vista-aerea.jpg");
+    background-image: url("/images/hero-vista-aerea.jpg");
     background-size: cover;
     background-position: center;
   }
   .mosaic-bg-fauna {
-    background-image: url("/images/playa-catedrales-hero.jpg");
+    background-image: url("/images/hero-principal.jpg");
     background-size: cover;
     background-position: center;
   }
   .mosaic-bg-amanecer {
-    background-image: url("/images/catedrais-arcos.jpg");
+    background-image: url("/images/seccion-arcos.jpg");
     background-size: cover;
     background-position: center top;
   }
@@ -1626,6 +1698,12 @@ import Layout from "../layouts/Layout.astro";
     }
     .info-dot {
       animation: none;
+    }
+    .hero-video {
+      display: block;
+    }
+    .video-pause-btn {
+      display: flex;
     }
   }
 

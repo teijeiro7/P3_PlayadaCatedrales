@@ -12,105 +12,105 @@ const categorias = [
 
 const imagenes = [
   { 
-    src: '/images/galeria-paisaje-01.jpg', 
+    src: '/images/galeria-panoramica.jpg', 
     alt: 'Vista panoramica de la Playa de las Catedrales con arcos monumentales', 
     categoria: 'paisajes',
     titulo: 'Panoramica Monumental',
     descripcion: 'La playa en toda su extension, mostrando los imponentes arcos de piedra'
   },
   { 
-    src: '/images/galeria-arcos-01.jpg', 
+    src: '/images/galeria-arcos.jpg', 
     alt: 'Arcos naturales de piedra pizarra tallados por el mar durante millones de anos', 
     categoria: 'arcos',
     titulo: 'Los Arcos Centrales',
     descripcion: 'Las formaciones rocosas mas emblematicas de la costa gallega'
   },
   { 
-    src: '/images/galeria-atardecer-01.jpg', 
+    src: '/images/galeria-atardecer.jpg', 
     alt: 'Atardecer dorado sobre los acantilados de la Playa de las Catedrales', 
     categoria: 'atardecer',
     titulo: 'Atardecer de Fuego',
     descripcion: 'El sol se oculta pintando el cielo de tonos anaranjados'
   },
   { 
-    src: '/images/catedrais-vista-aerea.jpg', 
+    src: '/images/hero-vista-aerea.jpg', 
     alt: 'Vista aerea de la Playa de las Catedrales mostrando la costa en zigzag', 
     categoria: 'paisajes',
     titulo: 'Perspectiva Aerea',
     descripcion: 'Una vision unica desde el cielo de este monumento natural'
   },
   { 
-    src: '/images/galeria-mareas-01.jpg', 
+    src: '/images/galeria-mareas.jpg', 
     alt: 'Formaciones rocosas reveladas durante la marea baja con pozas de agua cristalina', 
     categoria: 'mareas',
     titulo: 'Secretos de la Marea',
     descripcion: 'Las mareas revelan un mundo oculto de pozas y cuevas'
   },
   { 
-    src: '/images/arcos01.jpg', 
+    src: '/images/galeria-textura-roca.jpg', 
     alt: 'Detalle de los arcos naturales con textura de pizarra y musgo', 
     categoria: 'arcos',
     titulo: 'Textura del Tiempo',
     descripcion: 'Cada arco cuenta una historia de 500 millones de anos'
   },
   { 
-    src: '/images/playa-general.jpg', 
+    src: '/images/galeria-panoramica.jpg', 
     alt: 'Vista general de la playa con su arena dorada y formaciones rocosas', 
     categoria: 'paisajes',
     titulo: 'Arena y Roca',
     descripcion: 'El contraste entre la suave arena y la roca milenaria'
   },
   { 
-    src: '/images/tarjeta-atardecer.jpg', 
+    src: '/images/galeria-siluetas.jpg', 
     alt: 'Siluetas de los arcos contra un cielo anaranjado al atardecer', 
     categoria: 'atardecer',
     titulo: 'Siluetas al Ocaso',
     descripcion: 'Los arcos se dibujan contra el cielo crepuscular'
   },
   { 
-    src: '/images/galeria-detalles-01.jpg', 
+    src: '/images/galeria-percebes.jpg', 
     alt: 'Percebes en las rocas de la Playa de las Catedrales', 
     categoria: 'detalles',
     titulo: 'Percebes del Cantabrico',
     descripcion: 'Los frutos del mar que crecen en las rocas de la costa'
   },
   { 
-    src: '/images/paisaje.jpg', 
+    src: '/images/galeria-costa.jpg', 
     alt: 'Paisaje costero de la costa lucense con acantilados y mar Cantabrico', 
     categoria: 'paisajes',
     titulo: 'Costa Lucense',
     descripcion: 'La belleza natural de la costa de Lugo en toda su extension'
   },
   { 
-    src: '/images/tarjeta-catedrales.jpg', 
+    src: '/images/galeria-interior.jpg', 
     alt: 'Arcos monumentales vistos desde el interior de la playa', 
     categoria: 'arcos',
     titulo: 'Catedral Natural',
     descripcion: 'La perspectiva desde el interior revela la verdadera escala'
   },
   { 
-    src: '/images/tarjeta-arena.jpg', 
+    src: '/images/galeria-arena.jpg', 
     alt: 'Detalle de la arena y pequenas conchas en la orilla', 
     categoria: 'detalles',
     titulo: 'Tesoros de la Orilla',
     descripcion: 'Pequenos detalles que hacen magica esta playa'
   },
   { 
-    src: '/images/playacatedrales.jpg', 
+    src: '/images/galeria-visitantes.jpg', 
     alt: 'Vista amplia de la Playa de las Catedrales con visitantes caminando', 
     categoria: 'paisajes',
     titulo: 'Escala Humana',
     descripcion: 'Los visitantes dan perspectiva del tamano de los arcos'
   },
   { 
-    src: '/images/upscalemedia-transformed.jpeg', 
+    src: '/images/galeria-reflejos.jpg', 
     alt: 'Detalle artistico de las formaciones rocosas con reflejos del agua', 
     categoria: 'detalles',
     titulo: 'Reflejos del Atlantico',
     descripcion: 'El mar y la roca se funden en una danza visual'
   },
   { 
-    src: '/images/playa-catedrales-lugo-s1199252332.avif', 
+    src: '/images/galeria-amanecer.avif', 
     alt: 'Fotografia profesional de la playa con luz natural del amanecer', 
     categoria: 'paisajes',
     titulo: 'Luz del Amanecer',
@@ -273,8 +273,8 @@ const imagenes = [
 
 <script>
   // Gallery filtering
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
+  const filterBtns = document.querySelectorAll('.filter-btn') as NodeListOf<HTMLElement>;
+  const galleryItems = document.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -311,7 +311,7 @@ const imagenes = [
     });
 
     // Keyboard navigation for tabs
-    btn.addEventListener('keydown', (e) => {
+    btn.addEventListener('keydown', (e: KeyboardEvent) => {
       const tabs = Array.from(filterBtns);
       const index = tabs.indexOf(btn);
       
@@ -338,15 +338,15 @@ const imagenes = [
   });
 
   // Lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxTitle = document.getElementById('lightbox-title');
-  const lightboxDesc = document.getElementById('lightbox-desc');
-  const lightboxCurrent = document.getElementById('lightbox-current');
-  const lightboxTotal = document.getElementById('lightbox-total');
-  const closeBtn = document.querySelector('.lightbox-close');
-  const prevBtn = document.querySelector('.lightbox-prev');
-  const nextBtn = document.querySelector('.lightbox-next');
+  const lightbox = document.getElementById('lightbox') as HTMLElement;
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxTitle = document.getElementById('lightbox-title') as HTMLElement;
+  const lightboxDesc = document.getElementById('lightbox-desc') as HTMLElement;
+  const lightboxCurrent = document.getElementById('lightbox-current') as HTMLElement;
+  const lightboxTotal = document.getElementById('lightbox-total') as HTMLElement;
+  const closeBtn = document.querySelector('.lightbox-close') as HTMLElement;
+  const prevBtn = document.querySelector('.lightbox-prev') as HTMLElement;
+  const nextBtn = document.querySelector('.lightbox-next') as HTMLElement;
 
   let currentIndex = 0;
   let visibleItems = Array.from(galleryItems);
@@ -357,34 +357,45 @@ const imagenes = [
     );
   }
 
-  function openLightbox(index) {
+  function openLightbox(index: number) {
     updateVisibleItems();
     currentIndex = index;
     const item = visibleItems[currentIndex];
-    const img = item.querySelector('img');
-    const title = item.querySelector('.gallery-caption-title').textContent;
-    const desc = item.querySelector('.gallery-caption-desc').textContent;
-
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightboxTitle.textContent = title;
-    lightboxDesc.textContent = desc;
-    lightboxCurrent.textContent = currentIndex + 1;
-    lightboxTotal.textContent = visibleItems.length;
-
-    lightbox.hidden = false;
-    document.body.style.overflow = 'hidden';
+    if (!item) return;
     
-    // Focus management
-    setTimeout(() => closeBtn.focus(), 100);
+    const img = item.querySelector('img') as HTMLImageElement;
+    const titleEl = item.querySelector('.gallery-caption-title');
+    const descEl = item.querySelector('.gallery-caption-desc');
     
-    // Trap focus
-    trapFocus(lightbox);
+    const title = titleEl ? titleEl.textContent || "" : "";
+    const desc = descEl ? descEl.textContent || "" : "";
+
+    if (lightboxImg) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    }
+    if (lightboxTitle) lightboxTitle.textContent = title;
+    if (lightboxDesc) lightboxDesc.textContent = desc;
+    if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
+    if (lightboxTotal) lightboxTotal.textContent = String(visibleItems.length);
+
+    if (lightbox) {
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      
+      // Focus management
+      setTimeout(() => closeBtn?.focus(), 100);
+      
+      // Trap focus
+      trapFocus(lightbox);
+    }
   }
 
   function closeLightbox() {
-    lightbox.hidden = true;
-    document.body.style.overflow = '';
+    if (lightbox) {
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+    }
     
     // Return focus to the item that opened the lightbox
     if (visibleItems[currentIndex]) {
@@ -404,32 +415,41 @@ const imagenes = [
 
   function updateLightboxContent() {
     const item = visibleItems[currentIndex];
-    const img = item.querySelector('img');
-    const title = item.querySelector('.gallery-caption-title').textContent;
-    const desc = item.querySelector('.gallery-caption-desc').textContent;
+    if (!item) return;
 
-    // Add fade transition
-    lightboxImg.style.opacity = '0';
-    
-    setTimeout(() => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightboxTitle.textContent = title;
-      lightboxDesc.textContent = desc;
-      lightboxCurrent.textContent = currentIndex + 1;
-      lightboxImg.style.opacity = '1';
-    }, 200);
+    const img = item.querySelector('img') as HTMLImageElement;
+    const titleEl = item.querySelector('.gallery-caption-title');
+    const descEl = item.querySelector('.gallery-caption-desc');
+
+    const title = titleEl ? titleEl.textContent || "" : "";
+    const desc = descEl ? descEl.textContent || "" : "";
+
+    if (lightboxImg) {
+      // Add fade transition
+      lightboxImg.style.opacity = '0';
+      
+      setTimeout(() => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        if (lightboxTitle) lightboxTitle.textContent = title;
+        if (lightboxDesc) lightboxDesc.textContent = desc;
+        if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
+        lightboxImg.style.opacity = '1';
+      }, 200);
+    }
   }
 
   // Focus trap for accessibility
-  function trapFocus(element) {
-    const focusableElements = element.querySelectorAll(
+  function trapFocus(element: HTMLElement) {
+    const focusableElements = element.querySelectorAll<HTMLElement>(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     );
+    if (focusableElements.length === 0) return;
+    
     const firstFocusable = focusableElements[0];
     const lastFocusable = focusableElements[focusableElements.length - 1];
 
-    element.addEventListener('keydown', function(e) {
+    element.addEventListener('keydown', function(e: KeyboardEvent) {
       if (e.key === 'Tab') {
         if (e.shiftKey) {
           if (document.activeElement === firstFocusable) {
@@ -454,7 +474,7 @@ const imagenes = [
       openLightbox(visibleIndex >= 0 ? visibleIndex : index);
     });
 
-    item.addEventListener('keydown', (e) => {
+    item.addEventListener('keydown', (e: KeyboardEvent) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         updateVisibleItems();
@@ -464,27 +484,51 @@ const imagenes = [
     });
   });
 
-  closeBtn.addEventListener('click', closeLightbox);
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', showPrev);
+  if (nextBtn) nextBtn.addEventListener('click', showNext);
 
   // Keyboard navigation
-  lightbox.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeLightbox();
-    } else if (e.key === 'ArrowLeft') {
-      showPrev();
-    } else if (e.key === 'ArrowRight') {
-      showNext();
-    }
-  });
+  if (lightbox) {
+    lightbox.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        showPrev();
+      } else if (e.key === 'ArrowRight') {
+        showNext();
+      }
+    });
 
-  // Close on backdrop click
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
+    // Close on backdrop click
+    lightbox.addEventListener('click', (e: MouseEvent) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Touch/swipe support for lightbox
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e: TouchEvent) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        showNext();
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        showPrev();
+      }
     }
-  });
+  }
 
   // Scroll reveal animations
   const revealElements = document.querySelectorAll('.reveal');
@@ -502,32 +546,6 @@ const imagenes = [
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
-
-  // Touch/swipe support for lightbox
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  lightbox.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  lightbox.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        showNext();
-      } else {
-        showPrev();
-      }
-    }
-  }
 </script>
 
 <style>
@@ -548,7 +566,7 @@ const imagenes = [
   .hero-parallax-bg {
     position: absolute;
     inset: -20%;
-    background-image: url(/images/atardecer.jpg);
+    background-image: url(/images/hero-atardecer.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -650,7 +668,7 @@ const imagenes = [
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-secondary);
+    color: var(--color-secondary-text);
     margin-bottom: 1rem;
   }
 

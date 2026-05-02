@@ -151,7 +151,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="reservas-image reveal">
           <img
-            src="/images/playa-general.jpg"
+            src="/images/galeria-panoramica.jpg"
             alt="Vista general de la Playa de las Catedrales con visitantes"
             loading="lazy"
           />
@@ -273,7 +273,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="mareas-grid">
         <div class="mareas-image reveal">
           <img
-            src="/images/galeria-mareas-01.jpg"
+            src="/images/galeria-mareas.jpg"
             alt="Formaciones rocosas reveladas durante la marea baja"
             loading="lazy"
           />
@@ -454,6 +454,8 @@ import Layout from "../layouts/Layout.astro";
     justify-content: center;
     overflow: hidden;
     background: var(--color-bg);
+    margin-top: -80px;
+    padding-top: 80px;
   }
 
   .hero-parallax-bg {
@@ -465,7 +467,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .visitar-hero {
-    background-image: url("/images/catedrais-vista-aerea.jpg");
+    background-image: url("/images/hero-vista-aerea.jpg");
   }
 
   .hero-parallax-overlay {
@@ -494,8 +496,8 @@ import Layout from "../layouts/Layout.astro";
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-accent);
     margin-bottom: 1rem;
+    color: white;
   }
 
   .hero-title {
@@ -504,6 +506,7 @@ import Layout from "../layouts/Layout.astro";
     line-height: 1.1;
     margin-bottom: 1.5rem;
     text-wrap: balance;
+    color: white;
   }
 
   .hero-subtitle {
@@ -599,6 +602,7 @@ import Layout from "../layouts/Layout.astro";
   .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .reservas-grid {
@@ -614,7 +618,7 @@ import Layout from "../layouts/Layout.astro";
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--color-accent-text);
     margin-bottom: 1rem;
   }
 
@@ -889,7 +893,7 @@ import Layout from "../layouts/Layout.astro";
     background: linear-gradient(
       135deg,
       var(--color-primary) 0%,
-      var(--color-accent) 100%
+      var(--color-accent-text) 100%
     );
     text-align: center;
   }
@@ -937,13 +941,13 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .btn-primary {
-    background: var(--color-accent);
+    background: var(--color-accent-text);
     color: white;
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 188, 212, 0.3);
+    box-shadow: 0 10px 20px rgba(14, 131, 128, 0.3);
   }
 
   .btn-secondary {
