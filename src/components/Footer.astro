@@ -1,0 +1,210 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path
+        d="M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,0 L0,0 Z"
+        fill="var(--color-primary)"></path>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="Ir a la página de inicio">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 40 40"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle cx="20" cy="20" r="18" fill="white" opacity="0.15"
+            ></circle>
+            <path
+              d="M8 28 Q20 8 32 28"
+              stroke="white"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              d="M11 24 Q20 14 29 24"
+              stroke="white"
+              stroke-width="1.5"
+              fill="none"></path>
+          </svg>
+          <span>Praia das Catedrais</span>
+        </a>
+        <p class="footer-tagline">Monumento Natural · Ribadeo, Galicia</p>
+      </div>
+
+      <div class="badges">
+        <a
+          href="https://validator.w3.org/check?uri=referer"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Validar HTML W3C - Se abre en nueva pestaña"
+        >
+          <img
+            src="https://www.w3.org/Icons/valid-html401"
+            alt="HTML válido"
+            width="88"
+            height="31"
+            loading="lazy"
+          />
+        </a>
+        <a
+          href="https://www.w3.org/WAI/WCAG2AA-Conformance"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Accesibilidad WCAG 2.2 Nivel AA - Se abre en nueva pestaña"
+        >
+          <img
+            src="https://www.w3.org/WAI/WCAG2AA-blue"
+            alt="WCAG 2.2 AA conformidad"
+            width="88"
+            height="31"
+            loading="lazy"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; {currentYear} Praia das Catedrais. Proyecto académico Multimedia -
+        URJC.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: linear-gradient(
+      180deg,
+      var(--color-primary) 0%,
+      var(--color-primary-deep) 100%
+    );
+    color: white;
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    margin-top: auto;
+  }
+
+  .footer-wave {
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    line-height: 0;
+    margin-top: -29px;
+  }
+
+  .footer-wave svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1rem;
+  }
+
+  .footer-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .footer-logo:hover,
+  .footer-logo:focus-visible {
+    opacity: 0.9;
+  }
+
+  .footer-tagline {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    opacity: 0.9;
+    flex-shrink: 0;
+  }
+
+  .badges img {
+    height: 24px;
+    width: auto;
+    border-radius: 4px;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .badges a:hover img,
+  .badges a:focus-visible img {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+
+  .footer-bottom {
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.75rem;
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .footer-main {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-brand {
+      align-items: center;
+    }
+
+    .footer-bottom {
+      max-width: 280px;
+    }
+  }
+</style>
