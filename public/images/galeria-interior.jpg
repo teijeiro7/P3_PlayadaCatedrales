@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#87CEEB"/>
+  <rect y="400" width="800" height="200" fill="#C2B280"/>
+  <path d="M100 150 Q200 50 300 150 T500 150 T700 150" fill="none" stroke="#555" stroke-width="8"/>
+  <path d="M150 250 Q250 180 350 250 T550 250 T750 250" fill="none" stroke="#444" stroke-width="6"/>
+  <text x="400" y="350" font-family="Arial" font-size="32" text-anchor="middle" fill="#333">Playa de las Catedrales</text>
+</svg>
