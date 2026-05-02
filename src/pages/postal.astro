@@ -255,17 +255,12 @@ const imagenesPostal = [
 
   <style>
     .postal-page {
-      --postal-primary: #1a5f7a;
-      --postal-accent: #159895;
-      --postal-bg: #f8f9fa;
-      --postal-card: #ffffff;
-      --postal-text: #333;
-      --postal-text-light: #666;
+      /* Usando variables globales del Layout */
     }
 
     /* Hero */
     .postal-hero {
-      background: linear-gradient(135deg, var(--postal-primary) 0%, var(--postal-accent) 100%);
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
       color: white;
       padding: 4rem 1rem 3rem;
       text-align: center;
@@ -301,7 +296,7 @@ const imagenesPostal = [
     /* Main section */
     .postal-main {
       padding: 3rem 1rem;
-      background: var(--postal-bg);
+      background: var(--color-bg);
     }
 
     .postal-container {
@@ -320,13 +315,13 @@ const imagenesPostal = [
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--postal-accent);
+      color: var(--color-accent);
       margin-bottom: 0.5rem;
     }
 
     .section-header h2 {
       font-size: clamp(1.5rem, 4vw, 2rem);
-      color: var(--postal-primary);
+      color: var(--color-primary);
       margin: 0;
     }
 
@@ -340,7 +335,7 @@ const imagenesPostal = [
 
     /* Form panel */
     .form-panel {
-      background: var(--postal-card);
+      background: var(--color-surface);
       border-radius: 16px;
       padding: 2rem;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -355,7 +350,7 @@ const imagenesPostal = [
     .form-section legend {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--postal-primary);
+      color: var(--color-primary);
       margin-bottom: 0.75rem;
       padding: 0;
     }
@@ -407,12 +402,12 @@ const imagenesPostal = [
     }
 
     .imagen-option input:checked + .imagen-card {
-      border-color: var(--postal-accent);
+      border-color: var(--color-accent);
       box-shadow: 0 0 0 3px rgba(21, 152, 149, 0.2);
     }
 
     .imagen-option input:focus-visible + .imagen-card {
-      outline: 3px solid var(--postal-accent);
+      outline: 3px solid var(--color-accent);
       outline-offset: 2px;
     }
 
@@ -431,7 +426,7 @@ const imagenesPostal = [
       display: block;
       font-size: 0.9rem;
       font-weight: 500;
-      color: var(--postal-text);
+      color: var(--color-text);
       margin-bottom: 0.35rem;
     }
 
@@ -444,20 +439,20 @@ const imagenesPostal = [
       font-size: 1rem;
       font-family: inherit;
       background: white;
-      color: var(--postal-text);
+      color: var(--color-text);
       transition: border-color 0.2s;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--postal-accent);
+      border-color: var(--color-accent);
     }
 
     .contador {
       text-align: right;
       font-size: 0.8rem;
-      color: var(--postal-text-light);
+      color: var(--color-text-secondary);
       margin: 0.25rem 0 0;
     }
 
@@ -465,7 +460,7 @@ const imagenesPostal = [
     .btn-enviar {
       width: 100%;
       padding: 1rem;
-      background: linear-gradient(135deg, var(--postal-accent), var(--postal-primary));
+      background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
       color: white;
       border: none;
       border-radius: 10px;
@@ -492,8 +487,8 @@ const imagenesPostal = [
     .btn-secondary {
       padding: 0.75rem 1.5rem;
       background: white;
-      color: var(--postal-primary);
-      border: 2px solid var(--postal-primary);
+      color: var(--color-primary);
+      border: 2px solid var(--color-primary);
       border-radius: 8px;
       font-size: 1rem;
       font-weight: 500;
@@ -502,7 +497,7 @@ const imagenesPostal = [
     }
 
     .btn-secondary:hover {
-      background: var(--postal-primary);
+      background: var(--color-primary);
       color: white;
     }
 
@@ -527,12 +522,12 @@ const imagenesPostal = [
     }
 
     .mensaje-exito h3 {
-      color: var(--postal-primary);
+      color: var(--color-primary);
       margin: 0 0 0.5rem;
     }
 
     .mensaje-exito p {
-      color: var(--postal-text-light);
+      color: var(--color-text-secondary);
       margin: 0 0 1rem;
     }
 
@@ -557,7 +552,7 @@ const imagenesPostal = [
 
     .preview-header {
       padding: 0.75rem 1rem;
-      background: linear-gradient(135deg, var(--postal-primary), var(--postal-accent));
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
       color: white;
     }
 
@@ -589,13 +584,13 @@ const imagenesPostal = [
 
     .preview-location h3 {
       font-size: 1.1rem;
-      color: var(--postal-primary);
+      color: var(--color-primary);
       margin: 0 0 0.25rem;
     }
 
     .preview-location p {
       font-size: 0.85rem;
-      color: var(--postal-text-light);
+      color: var(--color-text-secondary);
       margin: 0;
     }
 
@@ -611,7 +606,7 @@ const imagenesPostal = [
 
     .preview-from span,
     .preview-to span {
-      color: var(--postal-text-light);
+      color: var(--color-text-secondary);
     }
 
     .preview-text {
@@ -621,7 +616,7 @@ const imagenesPostal = [
       border-radius: 8px;
       font-style: italic;
       font-size: 0.9rem;
-      color: var(--postal-text);
+      color: var(--color-text);
       min-height: 60px;
     }
 
@@ -631,13 +626,13 @@ const imagenesPostal = [
       padding-top: 0.75rem;
       border-top: 1px solid #eee;
       font-size: 0.8rem;
-      color: var(--postal-text-light);
+      color: var(--color-text-secondary);
     }
 
     .preview-caption {
       text-align: center;
       margin-top: 1rem;
-      color: var(--postal-text-light);
+      color: var(--color-text-secondary);
       font-size: 0.9rem;
       font-style: italic;
     }

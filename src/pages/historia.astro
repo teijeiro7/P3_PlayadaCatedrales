@@ -957,7 +957,7 @@ import Layout from "../layouts/Layout.astro";
     overflow: hidden;
     margin-top: -80px;
     padding-top: 80px;
-    background-color: #001e2b;
+    background-color: var(--color-primary-dark);
   }
 
   .hero-parallax-bg {
@@ -967,7 +967,7 @@ import Layout from "../layouts/Layout.astro";
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: #001e2b;
+    background-color: var(--color-primary-dark);
     z-index: 0;
   }
 
@@ -1140,7 +1140,7 @@ import Layout from "../layouts/Layout.astro";
   .section-subtitle {
     font-size: 1.0625rem;
     line-height: 1.6;
-    color: #40484c;
+    color: var(--color-text-secondary);
     text-align: center;
     max-width: 650px;
     margin: -0.5rem auto 3rem;
@@ -1160,7 +1160,7 @@ import Layout from "../layouts/Layout.astro";
   .intro-text p {
     font-size: 1.0625rem;
     line-height: 1.8;
-    color: #191c1e;
+    color: var(--color-text);
     margin: 0 0 1.25rem;
   }
 
@@ -1224,7 +1224,7 @@ import Layout from "../layouts/Layout.astro";
 
   .timeline-section {
     padding: 6rem 1.5rem;
-    background: #f2f3f6;
+    background: var(--color-bg-alt);
   }
 
   .timeline-header {
@@ -1339,7 +1339,7 @@ import Layout from "../layouts/Layout.astro";
   .vtimeline-card p {
     font-size: 0.9375rem;
     line-height: 1.65;
-    color: #40484c;
+    color: var(--color-text-secondary);
     margin: 0;
   }
 
@@ -1362,7 +1362,7 @@ import Layout from "../layouts/Layout.astro";
     padding: 0.875rem 1.75rem;
     border: 2px solid #edeef1;
     background: white;
-    color: #40484c;
+    color: var(--color-text-secondary);
     font-size: 0.9375rem;
     font-weight: 600;
     border-radius: 999px;
@@ -1425,7 +1425,7 @@ import Layout from "../layouts/Layout.astro";
   .tab-text p {
     font-size: 1rem;
     line-height: 1.75;
-    color: #191c1e;
+    color: var(--color-text);
     margin: 0 0 1rem;
   }
 
@@ -1454,7 +1454,7 @@ import Layout from "../layouts/Layout.astro";
 
   .tab-caption {
     font-size: 0.8125rem;
-    color: #40484c;
+    color: var(--color-text-secondary);
     margin-top: 0.75rem;
     font-style: italic;
   }
@@ -1484,25 +1484,25 @@ import Layout from "../layouts/Layout.astro";
 
   .badge-icon {
     display: block;
-    color: #57c5b6;
+    color: var(--color-secondary);
     margin-bottom: 0.75rem;
   }
 
   .protection-badge strong {
     display: block;
     font-size: 0.9375rem;
-    color: #00475e;
+    color: var(--color-primary-deep);
     margin-bottom: 0.25rem;
   }
 
   .protection-badge span {
     font-size: 0.75rem;
-    color: #40484c;
+    color: var(--color-text-secondary);
   }
 
   .tides-section {
     padding: 6rem 1.5rem;
-    background: #f2f3f6;
+    background: var(--color-bg-alt);
   }
 
   .tides-grid {
@@ -1527,15 +1527,15 @@ import Layout from "../layouts/Layout.astro";
 
   .tide-card-header {
     padding: 2rem 2rem 0;
-    color: #00475e;
+    color: var(--color-primary-deep);
   }
 
   .tide-card-low .tide-card-header {
-    color: #159895;
+    color: var(--color-accent);
   }
 
   .tide-card-high .tide-card-header {
-    color: #1a5f7a;
+    color: var(--color-primary);
   }
 
   .tide-card-body {
@@ -1546,14 +1546,14 @@ import Layout from "../layouts/Layout.astro";
     font-family: "Playfair Display", Georgia, serif;
     font-size: 1.25rem;
     font-weight: 600;
-    color: #00475e;
+    color: var(--color-primary-deep);
     margin: 0 0 0.75rem;
   }
 
   .tide-card-body p {
     font-size: 0.9375rem;
     line-height: 1.65;
-    color: #40484c;
+    color: var(--color-text-secondary);
     margin: 0 0 1rem;
   }
 
@@ -1565,7 +1565,7 @@ import Layout from "../layouts/Layout.astro";
 
   .tide-card-body li {
     font-size: 0.875rem;
-    color: #40484c;
+    color: var(--color-text-secondary);
     padding: 0.375rem 0;
     padding-left: 1.25rem;
     position: relative;
@@ -1582,11 +1582,11 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .tide-card-low .tide-card-body li::before {
-    background: #159895;
+    background: var(--color-accent);
   }
 
   .tide-card-high .tide-card-body li::before {
-    background: #1a5f7a;
+    background: var(--color-primary);
   }
 
   .tide-warning {
@@ -1602,7 +1602,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .tide-warning svg {
-    color: #f7bb78;
+    color: var(--color-warm);
     flex-shrink: 0;
     margin-top: 2px;
   }
@@ -1610,13 +1610,13 @@ import Layout from "../layouts/Layout.astro";
   .tide-warning p {
     font-size: 0.9375rem;
     line-height: 1.6;
-    color: #191c1e;
+    color: var(--color-text);
     margin: 0;
   }
 
   .name-section {
     padding: 6rem 1.5rem;
-    background: #00475e;
+    background: var(--color-primary-deep);
     position: relative;
     overflow: hidden;
   }
@@ -1624,7 +1624,7 @@ import Layout from "../layouts/Layout.astro";
   .name-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(45deg, #00475e, #1a5f7a);
+    background: linear-gradient(45deg, var(--color-primary-deep), var(--color-primary));
     opacity: 0.5;
   }
 

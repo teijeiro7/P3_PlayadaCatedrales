@@ -542,7 +542,7 @@ const imagenes = [
     overflow: hidden;
     margin-top: -80px;
     padding-top: 80px;
-    background-color: #001e2b;
+    background-color: var(--color-primary-dark);
   }
 
   .hero-parallax-bg {
@@ -552,7 +552,7 @@ const imagenes = [
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-color: #001e2b;
+    background-color: var(--color-primary-dark);
     z-index: 0;
   }
 
@@ -578,7 +578,7 @@ const imagenes = [
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #57c5b6;
+    color: var(--color-secondary);
     background: rgba(87, 197, 182, 0.1);
     border: 1px solid rgba(87, 197, 182, 0.3);
     padding: 0.5rem 1.25rem;
@@ -637,8 +637,8 @@ const imagenes = [
   /* Filters */
   .filters-section {
     padding: 3rem 1.5rem;
-    background: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .filters-wrapper {
@@ -650,7 +650,7 @@ const imagenes = [
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #57c5b6;
+    color: var(--color-secondary);
     margin-bottom: 1rem;
   }
 
@@ -665,7 +665,7 @@ const imagenes = [
     display: inline-flex;
     align-items: center;
     padding: 0.75rem 1.5rem;
-    border: 2px solid #dee2e6;
+    border: 2px solid var(--color-border);
     background: #fff;
     color: #495057;
     font-size: 0.9375rem;
@@ -677,27 +677,27 @@ const imagenes = [
   }
 
   .filter-btn:hover {
-    border-color: #57c5b6;
-    color: #00475e;
+    border-color: var(--color-secondary);
+    color: var(--color-primary-deep);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,71,94,0.15);
   }
 
   .filter-btn:focus-visible {
-    outline: 3px solid #57c5b6;
+    outline: 3px solid var(--color-secondary);
     outline-offset: 2px;
   }
 
   .filter-active {
-    background: #00475e;
+    background: var(--color-primary-deep);
     color: #fff;
-    border-color: #00475e;
+    border-color: var(--color-primary-deep);
   }
 
   .filter-active:hover {
-    background: #1a5f7a;
+    background: var(--color-primary);
     color: #fff;
-    border-color: #1a5f7a;
+    border-color: var(--color-primary);
   }
 
   /* Gallery Grid */
@@ -719,7 +719,7 @@ const imagenes = [
   }
 
   .gallery-item:focus-visible {
-    outline: 3px solid #57c5b6;
+    outline: 3px solid var(--color-secondary);
     outline-offset: 4px;
     border-radius: 16px;
   }
@@ -729,7 +729,7 @@ const imagenes = [
     border-radius: 16px;
     overflow: hidden;
     aspect-ratio: 4/3;
-    background: #001e2b;
+    background: var(--color-primary-dark);
   }
 
   .gallery-image-wrapper img {
@@ -796,7 +796,7 @@ const imagenes = [
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.125rem;
     font-weight: 600;
-    color: #00475e;
+    color: var(--color-primary-deep);
     margin-bottom: 0.25rem;
   }
 
@@ -869,7 +869,7 @@ const imagenes = [
     display: inline-block;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #57c5b6;
+    color: var(--color-secondary);
     background: rgba(87, 197, 182, 0.1);
     padding: 0.375rem 1rem;
     border-radius: 999px;
@@ -934,7 +934,7 @@ const imagenes = [
   /* CTA Section */
   .cta-section {
     padding: 6rem 1.5rem;
-    background: #00475e;
+    background: var(--color-primary-deep);
     position: relative;
     overflow: hidden;
   }
@@ -978,20 +978,20 @@ const imagenes = [
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 2.5rem;
-    background: #57c5b6;
-    color: #001e2b;
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     border-radius: 999px;
     transition: all 0.3s ease;
-    border: 2px solid #57c5b6;
+    border: 2px solid var(--color-secondary);
   }
 
   .cta-button:hover,
   .cta-button:focus-visible {
     background: transparent;
-    color: #57c5b6;
+    color: var(--color-secondary);
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
