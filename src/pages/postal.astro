@@ -174,11 +174,10 @@ const imagenesPostal = [
   <script>
     import emailjs from '@emailjs/browser';
 
-    // CONFIGURACION: Reemplaza estos valores con tus datos de EmailJS
-    // Obtenlos en https://dashboard.emailjs.com/admin
-    const EMAILJS_SERVICE_ID = 'service_xxj5e4t';
-    const EMAILJS_TEMPLATE_ID = 'template_q4o23tq';
-    const EMAILJS_PUBLIC_KEY = 'ErORxfu0hG10a6PTt';
+    // CONFIGURACION: Credenciales de EmailJS desde variables de entorno
+    const EMAILJS_SERVICE_ID = import.meta.env.EMAILJS_SERVICE_ID;
+    const EMAILJS_TEMPLATE_ID = import.meta.env.EMAILJS_TEMPLATE_ID;
+    const EMAILJS_PUBLIC_KEY = import.meta.env.EMAILJS_PUBLIC_KEY;
 
     const form = document.getElementById('postal-form') as HTMLFormElement;
     const previewImg = document.getElementById('preview-img') as HTMLImageElement;
