@@ -37,6 +37,9 @@ const currentYear = new Date().getFullYear();
           <span>Praia das Catedrais</span>
         </a>
         <p class="footer-tagline">Monumento Natural · Ribadeo, Galicia</p>
+        <nav class="footer-nav" aria-label="Navegación adicional">
+          <a href="/accesibilidad" class="footer-link">Declaración de Accesibilidad</a>
+        </nav>
       </div>
 
       <div class="badges">
@@ -130,6 +133,23 @@ const currentYear = new Date().getFullYear();
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+  }
+
+  .footer-nav {
+    margin-top: 0.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover,
+  .footer-link:focus-visible {
+    color: white;
+    text-decoration: underline;
   }
 
   .footer-logo {
