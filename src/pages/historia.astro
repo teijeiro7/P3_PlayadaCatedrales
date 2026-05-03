@@ -900,8 +900,12 @@ import Layout from "../layouts/Layout.astro";
   const statsBar = document.querySelector(".stats-history");
   if (statsBar) statsObserver.observe(statsBar);
 
-  const tabButtons = document.querySelectorAll(".tab-btn") as NodeListOf<HTMLElement>;
-  const tabPanels = document.querySelectorAll(".tab-panel") as NodeListOf<HTMLElement>;
+  const tabButtons = document.querySelectorAll(
+    ".tab-btn",
+  ) as NodeListOf<HTMLElement>;
+  const tabPanels = document.querySelectorAll(
+    ".tab-panel",
+  ) as NodeListOf<HTMLElement>;
 
   tabButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -966,7 +970,7 @@ import Layout from "../layouts/Layout.astro";
   .hero-parallax-bg {
     position: absolute;
     inset: -20%;
-    background-image: url("/images/hero-historia-high-res.png");
+    background-image: url("/images/hero-historia-high-res.jpeg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
