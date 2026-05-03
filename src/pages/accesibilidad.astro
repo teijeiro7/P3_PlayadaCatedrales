@@ -6,67 +6,487 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <h1>Declaración de Accesibilidad</h1>
 
-    <section aria-labelledby="compromiso-title">
+    <section aria-labelledby="compromiso-title" class="compromiso-section">
       <h2 id="compromiso-title">Compromiso con la Accesibilidad</h2>
       <p>Nos comprometemos a garantizar que este sitio web sea accesible para todas las personas, independientemente de sus capacidades o tecnologías utilizadas. Este sitio cumple con las <strong>Pautas de Accesibilidad al Contenido Web (WCAG) 2.2</strong> en su nivel de conformidad <strong>AA</strong>.</p>
+      <p>Esta declaración aplica al sitio web <a href="https://p3-playa-catedrales.vercel.app">https://p3-playa-catedrales.vercel.app</a>, publicado el 3 de mayo de 2026.</p>
     </section>
 
-    <section aria-labelledby="cumplimiento-title">
+    <section aria-labelledby="cumplimiento-title" class="cumplimiento-section">
       <h2 id="cumplimiento-title">Estado de Cumplimiento</h2>
-      <p>Este sitio web es <strong>parcialmente conforme</strong> con WCAG 2.2 nivel AA debido a las siguientes excepciones:</p>
-      <ul>
-        <li>Contenido multimedia de terceros (mapas embebidos)</li>
-      </ul>
+      <p>Este sitio web es <strong>parcialmente conforme</strong> con WCAG 2.2 nivel AA debido a la siguiente excepción:</p>
+      <div class="exception-card">
+        <h3>Contenido de terceros</h3>
+        <p>El mapa embebido de Google Maps es contenido de terceros que no está bajo nuestro control directo. Aunque hemos proporcionado etiquetas ARIA y texto descriptivo, no podemos garantizar su total conformidad con WCAG 2.2.</p>
+      </div>
     </section>
 
-    <section aria-labelledby="navegacion-title">
+    <section aria-labelledby="navegacion-title" class="navegacion-section">
       <h2 id="navegacion-title">Navegación por Teclado</h2>
-      <p>Puedes navegar por todo el sitio usando solo el teclado:</p>
-      <ul>
-        <li><kbd>Tab</kbd> - Avanzar al siguiente elemento interactivo</li>
-        <li><kbd>Shift + Tab</kbd> - Retroceder al elemento anterior</li>
-        <li><kbd>Enter</kbd> o <kbd>Espacio</kbd> - Activar enlace o botón</li>
-        <li><kbd>Escape</kbd> - Cerrar menú o lightbox</li>
+      <p>Toda la funcionalidad del sitio está disponible mediante teclado:</p>
+      <div class="key-shortcuts">
+        <div class="shortcut-item">
+          <kbd>Tab</kbd>
+          <span>Avanzar al siguiente elemento interactivo</span>
+        </div>
+        <div class="shortcut-item">
+          <kbd>Shift</kbd> + <kbd>Tab</kbd>
+          <span>Retroceder al elemento anterior</span>
+        </div>
+        <div class="shortcut-item">
+          <kbd>Enter</kbd> o <kbd>Espacio</kbd>
+          <span>Activar enlace o botón</span>
+        </div>
+        <div class="shortcut-item">
+          <kbd>Escape</kbd>
+          <span>Cerrar menú, lightbox o componente modal</span>
+        </div>
+        <div class="shortcut-item">
+          <kbd>Flechas</kbd> ← → ↑ ↓
+          <span>Navegar en componentes interactivos (tabs, galería)</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="criterios-title" class="criterios-section">
+      <h2 id="criterios-title">Criterios de Conformidad WCAG 2.2 AA Cumplidos</h2>
+
+      <h3 class="principio-title">1. Perceptible</h3>
+      <table class="wcag-table" aria-label="Criterios WCAG 2.2 Perceptible">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel</th>
+            <th>Implementación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.1.1 - Texto alternativo</td>
+            <td>A</td>
+            <td>Todas las imágenes informativas tienen atributo alt descriptivo. Imágenes decorativas tienen aria-hidden="true".</td>
+          </tr>
+          <tr>
+            <td>1.2.1 - Solo audio y solo video (pregrabado)</td>
+            <td>A</td>
+            <td>Vídeos decorativos con aria-hidden tienen pista de descripciones en VTT para usuarios que no pueden ver.</td>
+          </tr>
+          <tr>
+            <td>1.2.2 - Subtítulos (pregrabado)</td>
+            <td>A</td>
+            <td>Vídeos incluyen pista de descripciones en español (kind="descriptions").</td>
+          </tr>
+          <tr>
+            <td>1.3.1 - Info y relaciones</td>
+            <td>A</td>
+            <td>HTML semántico (header, nav, main, footer, section, article). Estructura de encabezados jerárquica (h1-h3).</td>
+          </tr>
+          <tr>
+            <td>1.3.2 - Secuencia significativa</td>
+            <td>A</td>
+            <td>El contenido mantiene el orden lógico de presentación cuando se transforma por CSS.</td>
+          </tr>
+          <tr>
+            <td>1.4.1 - Uso de color</td>
+            <td>A</td>
+            <td>La información no se transmite solo por color. Los estados de error y éxito también usan texto e iconos.</td>
+          </tr>
+          <tr>
+            <td>1.4.2 - Control de audio</td>
+            <td>A</td>
+            <td>El vídeo de fondo tiene botón de pausa visible y accesible. El audio no se reproduce automáticamente sin control del usuario.</td>
+          </tr>
+          <tr>
+            <td>1.4.3 - Contraste (mínimo)</td>
+            <td>AA</td>
+            <td>Contraste de texto mínimo 4.5:1 para texto normal, 3:1 para texto grande y gráficos.</td>
+          </tr>
+          <tr>
+            <td>1.4.4 - Redimensionamiento de texto</td>
+            <td>AA</td>
+            <td>El texto se puede redimensionar hasta 200% sin pérdida de contenido ni scroll horizontal (layout fluido).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="principio-title">2. Operable</h3>
+      <table class="wcag-table" aria-label="Criterios WCAG 2.2 Operable">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel</th>
+            <th>Implementación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2.1.1 - Teclado</td>
+            <td>A</td>
+            <td>Toda la funcionalidad disponible mediante teclado. Sin trampas de teclado. Skip-link para saltar navegación.</td>
+          </tr>
+          <tr>
+            <td>2.1.2 - Sin trampa de teclado</td>
+            <td>A</td>
+            <td>Los componentes modales (lightbox, menú) permiten salir con Escape y mantienen el foco atrapado mientras están activos.</td>
+          </tr>
+          <tr>
+            <td>2.2.1 - Ajuste de tiempo</td>
+            <td>A</td>
+            <td>No hay límites de tiempo. El contenido no cambia automáticamente sin control del usuario (vídeo decorativo se puede pausar).</td>
+          </tr>
+          <tr>
+            <td>2.3.1 - Tres parpadeos o por debajo</td>
+            <td>A</td>
+            <td>No hay contenido que parpadea más de 3 veces por segundo.</td>
+          </tr>
+          <tr>
+            <td>2.4.1 - Bypass blocks</td>
+            <td>A</td>
+            <td>Skip-link "Saltar al contenido principal" visible al recibir foco al inicio de cada página.</td>
+          </tr>
+          <tr>
+            <td>2.4.2 - Títulos de página</td>
+            <td>A</td>
+            <td>Cada página tiene un título único y descriptivo en el elemento title.</td>
+          </tr>
+          <tr>
+            <td>2.4.3 - Orden del foco</td>
+            <td>A</td>
+            <td>El foco sigue un orden lógico y predecible: navegación → contenido principal → footer.</td>
+          </tr>
+          <tr>
+            <td>2.4.4 - Propósito de los enlaces (en contexto)</td>
+            <td>AA</td>
+            <td>Los enlaces tienen texto descriptivo. Los que abren nueva pestaña tienen aria-label indicándolo.</td>
+          </tr>
+          <tr>
+            <td>2.4.6 - Encabezados y etiquetas</td>
+            <td>AA</td>
+            <td>Encabezados jerárquicos. Controles de formulario tienen etiquetas asociadas (for/id o aria-labelledby).</td>
+          </tr>
+          <tr>
+            <td>2.5.5 - Tamaño objetivo</td>
+            <td>AAA</td>
+            <td>Los objetivos interactivos tienen al menos 44x44px, excepto cuando están inline con suficiente espaciado.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="principio-title">3. Comprensible</h3>
+      <table class="wcag-table" aria-label="Criterios WCAG 2.2 Comprensible">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel</th>
+            <th>Implementación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3.1.1 - Idioma de la página</td>
+            <td>A</td>
+            <td>Atributo lang="es" en el elemento html.</td>
+          </tr>
+          <tr>
+            <td>3.2.1 - Al recibir foco</td>
+            <td>A</td>
+            <td>Los componentes no cambian de contexto al recibir el foco.</td>
+          </tr>
+          <tr>
+            <td>3.2.2 - Al recibir entrada</td>
+            <td>A</td>
+            <td>El cambio de configuración de componentes no ocurre automáticamente tras la entrada del usuario.</td>
+          </tr>
+          <tr>
+            <td>3.3.1 - Identificación de errores</td>
+            <td>A</td>
+            <td>Errores de formulario se identifican visualmente y mediante texto (bordes rojos, mensajes).</td>
+          </tr>
+          <tr>
+            <td>3.3.2 - Etiquetas o instrucciones</td>
+            <td>A</td>
+            <td>Los campos de formulario tienen etiquetas visibles y asociadas. Hay instrucciones cuando son necesarias.</td>
+          </tr>
+          <tr>
+            <td>3.3.3 - Sugerencia de errores</td>
+            <td>AA</td>
+            <td>Los campos obligatorios se indican con *. Validación HTML5 proporciona mensajes de error específicos.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="principio-title">4. Robusto</h3>
+      <table class="wcag-table" aria-label="Criterios WCAG 2.2 Robusto">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Nivel</th>
+            <th>Implementación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>4.1.1 - Parsing</td>
+            <td>A</td>
+            <td>HTML válido según Validador W3C. Estructura anidada correcta. IDs únicos.</td>
+          </tr>
+          <tr>
+            <td>4.1.2 - Nombre, rol, valor</td>
+            <td>A</td>
+            <td>Elementos interactivos tienen roles y propiedades ARIA correctos. Estados (aria-selected, aria-checked, aria-expanded) se actualizan dinámicamente.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="tecnologias-title" class="tecnologias-section">
+      <h2 id="tecnologias-title">Tecnologías de Accesibilidad</h2>
+      <p>Este sitio web utiliza las siguientes tecnologías para garantizar la accesibilidad:</p>
+      <ul class="tech-list">
+        <li><strong>HTML5</strong> - Estructura semántica del contenido</li>
+        <li><strong>WAI-ARIA 1.2</strong> - Roles y propiedades de accesibilidad para componentes interactivos</li>
+        <li><strong>CSS3</strong> - Estilos con soporte para prefers-reduced-motion</li>
+        <li><strong>JavaScript ES6+</strong> - Comportamiento interactivo con gestión de foco</li>
+        <li><strong>WebVTT</strong> - Pistas de descripciones para vídeos</li>
       </ul>
     </section>
 
-    <section aria-labelledby="funcionalidades-title">
-      <h2 id="funcionalidades-title">Funcionalidades de Accesibilidad</h2>
-      <ul>
-        <li><strong>Skip-link:</strong> Enlace para saltar al contenido principal al inicio de la página</li>
-        <li><strong>Estructura semántica:</strong> Encabezados jerárquicos (h1-h3), landmarks ARIA</li>
-        <li><strong>Texto alternativo:</strong> Todas las imágenes tienen descripciones textuales</li>
-        <li><strong>Contraste suficiente:</strong> Relación de contrato mínima de 4.5:1 en todos los textos</li>
-        <li><strong>Redimensionamiento:</strong> El texto puede aumentarse hasta 200% sin pérdida de contenido</li>
-        <li><strong>Formularios accesibles:</strong> Etiquetas asociadas, mensajes de error claros</li>
-        <li><strong>Subtítulos:</strong> Los vídeos incluyen pistas de subtítulos</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="validacion-title">
+    <section aria-labelledby="validacion-title" class="validacion-section">
       <h2 id="validacion-title">Validación</h2>
       <p>El sitio ha sido validado con las siguientes herramientas:</p>
-      <ul>
-        <li><strong>WAVE</strong> (WebAIM)</li>
-        <li><strong>axe DevTools</strong></li>
-        <li><strong>Google Lighthouse</strong></li>
-        <li><strong>TAW</strong></li>
-        <li><strong>Validador HTML W3C</strong></li>
-        <li><strong>Validador textual</strong></li>
-      </ul>
+      <div class="validators-grid">
+        <div class="validator-card">
+          <h3>WAVE (WebAIM)</h3>
+          <p>Herramienta de evaluación visual de accesibilidad. Verifica contraste, etiquetas ARIA, estructura de encabezados.</p>
+          <a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer" aria-label="Abrir WAVE WebAIM (se abre en nueva pestaña)">Visitar WAVE →</a>
+        </div>
+        <div class="validator-card">
+          <h3>axe DevTools</h3>
+          <p>Herramienta automatizada de pruebas de accesibilidad integrada en navegador. Detecta el 57% de los problemas WCAG.</p>
+          <a href="https://www.deque.com/axe/" target="_blank" rel="noopener noreferrer" aria-label="Abrir axe DevTools (se abre en nueva pestaña)">Visitar axe →</a>
+        </div>
+        <div class="validator-card">
+          <h3>Google Lighthouse</h3>
+          <p>Herramienta de auditoría de páginas web que incluye pruebas de accesibilidad WCAG.</p>
+          <a href="https://developers.google.com/web/tools/lighthouse" target="_blank" rel="noopener noreferrer" aria-label="Abrir Lighthouse (se abre en nueva pestaña)">Visitar Lighthouse →</a>
+        </div>
+        <div class="validator-card">
+          <h3>TAW</h3>
+          <p>Herramienta de análisis de accesibilidad web en español basada en WCAG.</p>
+          <a href="https://www.tawdis.net/taw3/cms/es" target="_blank" rel="noopener noreferrer" aria-label="Abrir TAW (se abre en nueva pestaña)">Visitar TAW →</a>
+        </div>
+        <div class="validator-card">
+          <h3>Validador HTML W3C</h3>
+          <p>Verifica la conformidad del markup HTML con los estándares del W3C.</p>
+          <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Validador W3C (se abre en nueva pestaña)">Visitar W3C →</a>
+        </div>
+        <div class="validator-card">
+          <h3>Validador textual (Lynx)</h3>
+          <p>Navegador web en modo texto para verificar la estructura y contenido sin estilos.</p>
+          <a href="http://lynx.browser.org/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Lynx (se abre en nueva pestaña)">Visitar Lynx →</a>
+        </div>
+      </div>
     </section>
 
-    <section aria-labelledby="contacto-title">
-      <h2 id="contacto-title">Contacto</h2>
-      <p>Si encuentras alguna barrera de accesibilidad, por favor contáctanos a través del <a href="/postal">formulario de contacto</a>.</p>
+    <section aria-labelledby="contacto-title" class="contacto-section">
+      <h2 id="contacto-title">Contacto y Comentarios</h2>
+      <p>Si encuentras alguna barrera de accesibilidad o tienes sugerencias para mejorar este sitio, por favor contáctanos:</p>
+      <ul class="contact-list">
+        <li>A través del <a href="/postal">formulario de contacto</a></li>
+        <li>Por correo electrónico: <a href="mailto:accesibilidad@playacatedrales.com">accesibilidad@playacatedrales.com</a></li>
+      </ul>
+      <p class="last-updated">Última revisión: 3 de mayo de 2026</p>
     </section>
   </div>
 </Layout>
 
 <style>
-  .container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
-  section { margin-bottom: 2.5rem; }
-  kbd { background: #eee; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid #ccc; font-family: monospace; }
-  ul { padding-left: 1.5rem; }
-  li { margin-bottom: 0.5rem; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--color-primary-deep);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin: 2.5rem 0 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-secondary);
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary-deep);
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  section { margin-bottom: 1rem; }
+
+  .exception-card {
+    background: rgba(243, 156, 18, 0.1);
+    border-left: 4px solid #f39c12;
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+
+  .exception-card h3 {
+    color: #f39c12;
+    margin-top: 0;
+  }
+
+  .key-shortcuts {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  kbd {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    font-size: 0.9rem;
+    color: #495057;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  }
+
+  .principio-title {
+    color: var(--color-accent-text);
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .wcag-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .wcag-table thead {
+    background: var(--color-primary-deep);
+    color: white;
+  }
+
+  .wcag-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .wcag-table td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid #edeef1;
+  }
+
+  .wcag-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .wcag-table tbody tr:nth-child(even) {
+    background: rgba(87, 197, 182, 0.05);
+  }
+
+  .validators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .validator-card {
+    background: white;
+    border: 1px solid #edeef1;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .validator-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .validator-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary-deep);
+  }
+
+  .validator-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .validator-card a {
+    color: var(--color-accent-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .validator-card a:hover {
+    text-decoration: underline;
+  }
+
+  .tech-list, .contact-list {
+    padding-left: 1.5rem;
+  }
+
+  .tech-list li, .contact-list li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .contact-list a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact-list a:hover {
+    text-decoration: underline;
+  }
+
+  .last-updated {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .wcag-table {
+      display: block;
+      overflow-x: auto;
+    }
+
+    .shortcut-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .validators-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
