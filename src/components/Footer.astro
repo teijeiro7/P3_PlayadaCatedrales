@@ -76,6 +76,7 @@ const currentYear = new Date().getFullYear();
         &copy; {currentYear} Praia das Catedrais. Proyecto académico Multimedia -
         URJC.
       </p>
+      <a href="/sitemap-index.xml" class="sitemap-link">Mapa del Sitio</a>
     </div>
   </div>
 </footer>
@@ -191,6 +192,20 @@ const currentYear = new Date().getFullYear();
     font-size: 0.75rem;
     opacity: 0.85;
     margin: 0;
+  }
+
+  .sitemap-link {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: underline;
+    margin-top: 0.25rem;
+    display: inline-block;
+  }
+
+  .sitemap-link:hover,
+  .sitemap-link:focus-visible {
+    color: white;
+    opacity: 1;
   }
 
   @media (max-width: 640px) {

@@ -70,11 +70,11 @@ const imagenesPostal = [
                 <div class="form-row">
                   <div class="form-group">
                     <label for="nombre_emisor">Tu nombre *</label>
-                    <input type="text" id="nombre_emisor" name="nombre_emisor" required placeholder="Tu nombre" autocomplete="name" />
+                    <input type="text" id="nombre_emisor" name="nombre_emisor" required placeholder="Tu nombre" autocomplete="name" aria-required="true" />
                   </div>
                   <div class="form-group">
                     <label for="email_emisor">Tu correo *</label>
-                    <input type="email" id="email_emisor" name="email_emisor" required placeholder="tu@email.com" autocomplete="email" />
+                    <input type="email" id="email_emisor" name="email_emisor" required placeholder="tu@email.com" autocomplete="email" aria-required="true" />
                   </div>
                 </div>
               </fieldset>
@@ -84,11 +84,11 @@ const imagenesPostal = [
                 <div class="form-row">
                   <div class="form-group">
                     <label for="nombre_destinatario">Nombre *</label>
-                    <input type="text" id="nombre_destinatario" name="nombre_destinatario" required placeholder="Nombre del destinatario" />
+                    <input type="text" id="nombre_destinatario" name="nombre_destinatario" required placeholder="Nombre del destinatario" autocomplete="name" aria-required="true" />
                   </div>
                   <div class="form-group">
                     <label for="email_destinatario">Correo *</label>
-                    <input type="email" id="email_destinatario" name="email_destinatario" required placeholder="destinatario@email.com" />
+                    <input type="email" id="email_destinatario" name="email_destinatario" required placeholder="destinatario@email.com" autocomplete="email" aria-required="true" />
                   </div>
                 </div>
               </fieldset>
@@ -103,7 +103,7 @@ const imagenesPostal = [
                     rows="4"
                     maxlength="300"
                     required
-                    placeholder="Escribe un mensaje especial..."
+                    placeholder="Escribe un mensaje especial..." aria-required="true"
                   ></textarea>
                   <p class="contador" aria-live="polite"><span id="contador">0</span> / 300 caracteres</p>
                 </div>
@@ -517,8 +517,10 @@ const imagenesPostal = [
     }
 
     .btn-enviar:disabled {
-      opacity: 0.7;
+      background: #595959;
+      color: #FFFFFF;
       cursor: not-allowed;
+      opacity: 1;
     }
 
     .btn-secondary {

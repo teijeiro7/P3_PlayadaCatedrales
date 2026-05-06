@@ -1,4 +1,5 @@
-import { defineConfig } from 'astro/config';
+﻿import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://p3-playa-catedrales.vercel.app',
@@ -14,5 +15,6 @@ export default defineConfig({
   devServer: {
     port: 4321,
     host: true
-  }
+  },
+  integrations: [sitemap()]
 });
