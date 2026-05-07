@@ -21,8 +21,7 @@ const currentYear = new Date().getFullYear();
             fill="none"
             aria-hidden="true"
           >
-            <circle cx="20" cy="20" r="18" fill="white" opacity="0.15"
-            ></circle>
+            <circle cx="20" cy="20" r="18" fill="white" opacity="0.15"></circle>
             <path
               d="M8 28 Q20 8 32 28"
               stroke="white"
@@ -37,6 +36,11 @@ const currentYear = new Date().getFullYear();
           <span>Praia das Catedrais</span>
         </a>
         <p class="footer-tagline">Monumento Natural · Ribadeo, Galicia</p>
+        <nav class="footer-nav" aria-label="Navegación adicional">
+          <a href="/accesibilidad" class="footer-link"
+            >Declaración de Accesibilidad</a
+          >
+        </nav>
       </div>
 
       <div class="badges">
@@ -55,14 +59,14 @@ const currentYear = new Date().getFullYear();
           />
         </a>
         <a
-          href="https://www.w3.org/WAI/WCAG2AA-Conformance"
+          href="https://www.w3.org/WAI/WCAG22/quickref/?showtechniques=221#conformance"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Accesibilidad WCAG 2.2 Nivel AA - Se abre en nueva pestaña"
         >
           <img
-            src="https://www.w3.org/WAI/WCAG2AA-blue"
-            alt="WCAG 2.2 AA conformidad"
+            src="https://www.w3.org/WAI/WCAG22/wcag2.2AAA-blue.png"
+            alt="WCAG 2.2 Nivel AA - Conforme"
             width="88"
             height="31"
             loading="lazy"
@@ -131,6 +135,23 @@ const currentYear = new Date().getFullYear();
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+  }
+
+  .footer-nav {
+    margin-top: 0.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover,
+  .footer-link:focus-visible {
+    color: white;
+    text-decoration: underline;
   }
 
   .footer-logo {

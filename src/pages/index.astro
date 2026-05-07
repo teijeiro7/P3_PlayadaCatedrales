@@ -17,6 +17,7 @@ import Layout from "../layouts/Layout.astro";
       aria-hidden="true"
     >
       <source src="/videos/video1.mp4" type="video/mp4" />
+      <track kind="descriptions" label="Descripciones en español" srclang="es" src="/captions/video1-descriptions.vtt" default />
     </video>
     <div class="hero-overlay"></div>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -41,6 +42,20 @@ import Layout from "../layouts/Layout.astro";
           stroke-linejoin="round"></path>
       </svg>
     </div>
+    <button
+      id="video-pause-btn"
+      class="video-pause-btn"
+      aria-label="Pausar video de fondo"
+      aria-pressed="false"
+      type="button">
+      <svg id="pause-icon-pause" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="6" y="4" width="4" height="16" fill="white"></rect>
+        <rect x="14" y="4" width="4" height="16" fill="white"></rect>
+      </svg>
+      <svg id="pause-icon-play" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display: none;">
+        <path d="M5 3l14 9-14 9V3z" fill="white"></path>
+      </svg>
+    </button>
   </section>
 
   <section class="stats-bar" aria-label="Estadisticas">
@@ -479,7 +494,8 @@ import Layout from "../layouts/Layout.astro";
             href="https://ascatedrais.xunta.es/"
             class="info-cta-link"
             target="_blank"
-            rel="noopener noreferrer">Solicitar pase gratuito</a
+            rel="noopener noreferrer"
+            aria-label="Solicitar pase gratuito en el sitio oficial de la Xunta (se abre en nueva pestaña)">Solicitar pase gratuito</a
           >
         </article>
         <article class="info-card reveal" aria-labelledby="info-llegar">
@@ -606,7 +622,7 @@ import Layout from "../layouts/Layout.astro";
   let waterMesh: THREE.Mesh,
     scene: THREE.Scene,
     camera: THREE.PerspectiveCamera,
-    renderer: THREE.WebGLRenderer;
+    renderer: THREE.WebGLRenderer | null = null;
   let mouseX = 0,
     mouseY = 0;
 
@@ -621,13 +637,20 @@ import Layout from "../layouts/Layout.astro";
         0.1,
         1000,
       );
-      renderer = new THREE.WebGLRenderer({
-        canvas: waterCanvas,
-        alpha: true,
-        antialias: true,
-      });
-      renderer.setSize(waterCanvas.clientWidth, waterCanvas.clientHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      try {
+        renderer = new THREE.WebGLRenderer({
+          canvas: waterCanvas,
+          alpha: true,
+          antialias: true,
+          powerPreference: "high-performance",
+        });
+        renderer.setSize(waterCanvas.clientWidth, waterCanvas.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      } catch (error) {
+        console.warn("WebGL renderer creation failed:", error);
+        waterCanvas.style.display = "none";
+        return;
+      }
 
       const geometry = new THREE.PlaneGeometry(20, 8, 128, 64);
       const material = new THREE.ShaderMaterial({
@@ -686,7 +709,7 @@ import Layout from "../layouts/Layout.astro";
           (mouseX - material.uniforms.uMouse.value.x) * 0.05;
         material.uniforms.uMouse.value.y +=
           (mouseY - material.uniforms.uMouse.value.y) * 0.05;
-        renderer.render(scene, camera);
+        if (renderer) renderer.render(scene, camera);
       };
       animate();
     };
@@ -704,6 +727,7 @@ import Layout from "../layouts/Layout.astro";
     const resizeWater = () => {
       const w = waterCanvas.clientWidth;
       const h = waterCanvas.clientHeight;
+      if (!renderer) return;
       renderer.setSize(w, h);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();

@@ -217,14 +217,13 @@ const imagenes = [
     <div class="container">
       <div class="filters-wrapper reveal">
         <p class="filters-label">Filtrar por categoria</p>
-        <div class="filters" role="tablist" aria-label="Categorias de imagenes">
+        <div class="filters" role="radiogroup" aria-label="Categorias de imagenes">
           {categorias.map((cat, index) => (
             <button
               class={`filter-btn ${index === 0 ? 'filter-active' : ''}`}
               data-filter={cat.id}
-              role="tab"
-              aria-selected={index === 0 ? 'true' : 'false'}
-              aria-controls={`panel-${cat.id}`}
+              role="radio"
+              aria-checked={index === 0 ? 'true' : 'false'}
               tabindex={index === 0 ? '0' : '-1'}
             >
               {cat.label}
@@ -342,15 +341,15 @@ const imagenes = [
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
-      
+
       // Update active state
       filterBtns.forEach(b => {
         b.classList.remove('filter-active');
-        b.setAttribute('aria-selected', 'false');
+        b.setAttribute('aria-checked', 'false');
         b.setAttribute('tabindex', '-1');
       });
       btn.classList.add('filter-active');
-      btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('aria-checked', 'true');
       btn.setAttribute('tabindex', '0');
 
       // Filter items with animation
